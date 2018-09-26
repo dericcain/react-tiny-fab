@@ -17,7 +17,7 @@ const plugins = [
   babel(),
   postCss({
     extensions: ['.sass'],
-    extract: isWatching() ? 'example/src/styles.css' : 'dist/styles.min.css',
+    extract: isWatching() ? 'example/src/styles.css' : 'dist/styles.css',
     minimize: false,
   }),
   bundleSize(),

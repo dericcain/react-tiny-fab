@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MdAdd, MdAccessAlarm } from 'react-icons/md';
+import {
+  MdAdd,
+  MdEmail,
+  MdNotifications,
+  MdPages,
+  MdSearch,
+  MdCode,
+  MdFavorite,
+} from 'react-icons/md';
 
 import { ActionButton, Fab } from './fab';
 import './styles.css';
 
 const components = [
   {
+    position: {
+      bottom: 0,
+      left: 0,
+    },
+    event: 'hover',
     mainButtonStyles: {
       backgroundColor: '#27ae60',
     },
@@ -15,6 +28,11 @@ const components = [
     },
   },
   {
+    position: {
+      top: 0,
+      right: 0,
+    },
+    event: 'click',
     mainButtonStyles: {
       backgroundColor: '#9b59b6',
     },
@@ -23,103 +41,73 @@ const components = [
     },
   },
   {
+    position: {
+      top: 0,
+      left: 0,
+    },
+    event: 'hover',
     mainButtonStyles: {
-      backgroundColor: 'white',
-      color: 'black',
+      backgroundColor: '#95a5a6',
+      color: '#34495e',
     },
     actionButtonStyles: {
-      backgroundColor: '#ddd',
-      color: 'red',
+      backgroundColor: '#696969',
+      color: '#27ae60',
     },
   },
   {
+    position: {
+      bottom: 0,
+      right: 0,
+    },
+    event: 'click',
     mainButtonStyles: {
-      backgroundColor: '#27ae60',
+      backgroundColor: '#e74c3c',
     },
     actionButtonStyles: {
-      backgroundColor: '#16a085',
-    },
-  },
-  {
-    mainButtonStyles: {
-      backgroundColor: '#9b59b6',
-    },
-    actionButtonStyles: {
-      backgroundColor: '#8e44ad',
-    },
-  },
-  {
-    mainButtonStyles: {
-      backgroundColor: 'white',
-      color: 'black',
-    },
-    actionButtonStyles: {
-      backgroundColor: '#ddd',
-      color: 'red',
-    },
-  },
-  {
-    mainButtonStyles: {
-      backgroundColor: '#27ae60',
-    },
-    actionButtonStyles: {
-      backgroundColor: '#16a085',
-    },
-  },
-  {
-    mainButtonStyles: {
-      backgroundColor: '#9b59b6',
-    },
-    actionButtonStyles: {
-      backgroundColor: '#8e44ad',
-    },
-  },
-  {
-    mainButtonStyles: {
-      backgroundColor: 'white',
-      color: 'black',
-    },
-    actionButtonStyles: {
-      backgroundColor: '#ddd',
-      color: 'red',
+      backgroundColor: '#ffffff',
+      color: '#34495e',
     },
   },
 ];
 
-const p = n =>
-  n % 2
-    ? {
-        top: 0,
-        right: n * 60 - 60,
-      }
-    : {
-        bottom: 0,
-        left: n * 60,
-      };
-
 const renderComponents = c =>
-  c.map(({ mainButtonStyles, actionButtonStyles }, i) => (
+  c.map(({ mainButtonStyles, actionButtonStyles, position, event }, i) => (
     <Fab
       mainButtonStyles={mainButtonStyles}
       actionButtonStyles={actionButtonStyles}
-      position={p(i)}
+      position={position}
       component={<MdAdd />}
+      event={event}
+      key={i}
     >
-      <ActionButton text="This is React" onClick={e => console.log(e)}>
-        <MdAdd />
+      <ActionButton
+        text="Email"
+        onClick={e => {
+          alert('I printed the event to the console.');
+          console.log(e);
+        }}
+      >
+        <MdEmail />
       </ActionButton>
-      <ActionButton text="This is cool" onClick={() => alert('Second one!')}>
-        <MdAccessAlarm />
+      <ActionButton text="Notifications" onClick={() => alert('Here is your notification.')}>
+        <MdNotifications />
       </ActionButton>
-      <ActionButton text="This is another one!!" onClick={() => alert('Third one!')}>
-        <MdAdd />
+      <ActionButton text="Fullscreen" onClick={() => alert('What?')}>
+        <MdPages />
       </ActionButton>
-      <ActionButton text="And again" onClick={() => alert('Fourth one!')}>
-        <MdAccessAlarm />
+      <ActionButton text="Search" onClick={() => alert('No search...')}>
+        <MdSearch />
+      </ActionButton>
+      <ActionButton text="Editor" onClick={e => console.log(e)}>
+        <MdCode />
+      </ActionButton>
+      <ActionButton text="Like it!" onClick={() => alert('This is fantastic!')}>
+        <MdFavorite />
       </ActionButton>
     </Fab>
   ));
 
-const App = () => renderComponents(components);
+const App = () => <React.Fragment>{renderComponents(components)}</React.Fragment>;
 
 ReactDOM.render(<App />, document.getElementById('root'));
