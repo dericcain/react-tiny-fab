@@ -1,0 +1,132 @@
+\:root
+  --react-fab-text-percent: 100%
+  --react-fab-position-multiplier: 1
+
+
+.react-fab
+  box-sizing: border-box
+  margin: 25px
+  position: fixed
+  white-space: nowrap
+  z-index: 30
+  padding-left: 0
+  list-style: none
+
+  > li
+    padding: 25px
+    margin: -25px
+
+    *:last-child
+      margin-bottom: 0
+
+    > button
+      height: 56px
+      width: 56px
+      z-index: 20
+      background-color: #7648e4
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      position: relative
+      border: none
+      border-radius: 50%
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28)
+      cursor: pointer
+      outline: none
+      padding: 0
+      -webkit-user-drag: none
+      font-weight: bold
+      color: #f1f1f1
+      text-decoration: none
+      font-size: 18px
+
+      > *
+        transition: ease-in-out transform .3s
+
+      &.open
+        > *
+          transform-origin: center center
+          transform: rotate(315deg)
+          transition: ease-in-out transform .3s
+
+    > ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+      &.open
+        > li
+
+          &:hover
+            > span
+              transition: ease-in-out opacity .2s
+              opacity: 0.9
+
+          &:nth-child(1)
+            transform: translateY(calc(-60px * var(--react-fab-position-multiplier)))
+            transition-delay: 0.05s
+
+          &:nth-child(2)
+            transform: translateY(calc(-120px * var(--react-fab-position-multiplier)))
+            transition-delay: 0.1s
+
+          &:nth-child(3)
+            transform: translateY(calc(-180px * var(--react-fab-position-multiplier)))
+            transition-delay: 0.15s
+
+          &:nth-child(4)
+            transform: translateY(calc(-240px * var(--react-fab-position-multiplier)))
+            transition-delay: 0.2s
+
+          &:nth-child(5)
+            transform: translateY(calc(-300px * var(--react-fab-position-multiplier)))
+            transition-delay: 0.25s
+
+          &:nth-child(6)
+            transform: translateY(calc(-360px * var(--react-fab-position-multiplier)))
+            transition-delay: 0.3s
+
+      > li
+        display: block
+        position: absolute
+        top: 0
+        right: 1px
+        padding: 10px 0
+        margin: -10px 0
+        transition: ease-in-out transform .3s
+
+        > button
+          height: 48px
+          width: 48px
+          background-color: #8491e4
+          display: inline-flex
+          justify-content: center
+          align-items: center
+          text-decoration: none
+          position: relative
+          border: none
+          border-radius: 50%
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28)
+          cursor: pointer
+          outline: none
+          padding: 0
+          -webkit-user-drag: none
+          font-weight: bold
+          color: #f1f1f1
+          margin-right: 4px
+          font-size: 16px
+
+        > span
+          opacity: 0
+          transition: ease-in-out opacity 0.2s
+          position: absolute
+          top: 50%
+          right: var(--react-fab-text-percent)
+          transform: translateY(-50%)
+          margin-right: 6px
+          background: rgba(0,0,0,.75)
+          padding: 2px 4px
+          border-radius: 2px
+          color: white
+          font-size: 13px
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28)

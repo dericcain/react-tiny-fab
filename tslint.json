@@ -1,0 +1,11 @@
+{
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "ordered-imports": false,
+    "member-ordering": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "object-literal-sort-keys": false,
+    "no-console": [true, "log"],
+    "semicolon": [true, "always"]
+  }
+}
