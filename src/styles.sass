@@ -58,46 +58,46 @@
               opacity: 0.9
 
           &:nth-child(1)
-            transform: translateY(-60px)
+            transform: translateY(-60px) scale(1)
             transition-delay: 0.05s
 
             &.top
-              transform: translateY(60px)
+              transform: translateY(60px) scale(1)
 
           &:nth-child(2)
-            transform: translateY(-120px)
+            transform: translateY(-120px) scale(1)
             transition-delay: 0.1s
 
             &.top
-              transform: translateY(120px)
+              transform: translateY(120px) scale(1)
 
           &:nth-child(3)
-            transform: translateY(-180px)
+            transform: translateY(-180px) scale(1)
             transition-delay: 0.15s
 
             &.top
-              transform: translateY(180px)
+              transform: translateY(180px) scale(1)
 
           &:nth-child(4)
-            transform: translateY(-240px)
+            transform: translateY(-240px) scale(1)
             transition-delay: 0.2s
 
             &.top
-              transform: translateY(240px)
+              transform: translateY(240px) scale(1)
 
           &:nth-child(5)
-            transform: translateY(-300px)
+            transform: translateY(-300px) scale(1)
             transition-delay: 0.25s
 
             &.top
-              transform: translateY(300px)
+              transform: translateY(300px) scale(1)
 
           &:nth-child(6)
-            transform: translateY(-360px)
+            transform: translateY(-360px) scale(1)
             transition-delay: 0.3s
 
             &.top
-              transform: translateY(360px)
+              transform: translateY(360px) scale(1)
 
       > li
         display: block
@@ -107,6 +107,48 @@
         padding: 10px 0
         margin: -10px 0
         transition: ease-in-out transform .3s
+
+        &:nth-child(1)
+          transform: translateY(-60px) scale(0)
+          transition-delay: 0.3s
+
+          &.top
+            transform: translateY(60px) scale(0)
+
+        &:nth-child(2)
+          transform: translateY(-120px) scale(0)
+          transition-delay: 0.25s
+
+          &.top
+            transform: translateY(120px) scale(0)
+
+        &:nth-child(3)
+          transform: translateY(-180px) scale(0)
+          transition-delay: 0.2s
+
+          &.top
+            transform: translateY(180px) scale(0)
+
+        &:nth-child(4)
+          transform: translateY(-240px) scale(0)
+          transition-delay: 0.15s
+
+          &.top
+            transform: translateY(240px) scale(0)
+
+        &:nth-child(5)
+          transform: translateY(-300px) scale(0)
+          transition-delay: 0.1s
+
+          &.top
+            transform: translateY(300px) scale(0)
+
+        &:nth-child(6)
+          transform: translateY(-360px) scale(0)
+          transition-delay: 0.05s
+
+          &.top
+            transform: translateY(360px) scale(0)
 
         > button
           height: 48px
