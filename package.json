@@ -1,37 +1,45 @@
 {
-  "name": "fab",
+  "name": "react-tiny-fab",
+  "description": "A tiny Floating Action Button for React.",
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/fab.cjs.js",
   "module": "dist/fab.esm.js",
   "scripts": {
-    "start": "WATCH=1 rollup -cw & npm run start:example",
-    "start:example": "npm --prefix ./example start ./example",
     "build": "NODE_ENV=production rollup -c",
-    "setup-example": "npm --prefix ./example install ./example"
+    "lint": "eslint src/*.js* --fix",
+    "setup-example": "npm --prefix ./example install ./example",
+    "start": "WATCH=1 rollup -cw & npm run start:example",
+    "start:example": "npm --prefix ./example start ./example"
   },
   "peerDependencies": {
     "react": ">= 15.4",
     "react-dom": ">= 15.4"
   },
   "devDependencies": {
-    "@types/node": "^9.4.6",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.7",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.0",
+    "babel-preset-minify": "^0.5.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
     "node-sass": "^4.9.3",
+    "prettier": "^1.14.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-icons": "^3.1.0",
     "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-bundle-size": "^1.0.2",
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-postcss": "^1.6.2",
-    "rollup-plugin-typescript2": "^0.17.0",
-    "rollup-plugin-uglify": "^6.0.0",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.0.3"
+    "rollup-plugin-postcss": "^1.6.2"
   }
 }

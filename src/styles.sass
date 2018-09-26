@@ -1,9 +1,4 @@
-\:root
-  --react-fab-text-percent: 100%
-  --react-fab-position-multiplier: 1
-
-
-.react-fab
+.react-tiny-fab
   box-sizing: border-box
   margin: 25px
   position: fixed
@@ -23,7 +18,7 @@
       height: 56px
       width: 56px
       z-index: 20
-      background-color: #7648e4
+      background-color: #666666
       display: inline-flex
       justify-content: center
       align-items: center
@@ -63,28 +58,46 @@
               opacity: 0.9
 
           &:nth-child(1)
-            transform: translateY(calc(-60px * var(--react-fab-position-multiplier)))
+            transform: translateY(-60px)
             transition-delay: 0.05s
 
+            &.top
+              transform: translateY(60px)
+
           &:nth-child(2)
-            transform: translateY(calc(-120px * var(--react-fab-position-multiplier)))
+            transform: translateY(-120px)
             transition-delay: 0.1s
 
+            &.top
+              transform: translateY(120px)
+
           &:nth-child(3)
-            transform: translateY(calc(-180px * var(--react-fab-position-multiplier)))
+            transform: translateY(-180px)
             transition-delay: 0.15s
 
+            &.top
+              transform: translateY(180px)
+
           &:nth-child(4)
-            transform: translateY(calc(-240px * var(--react-fab-position-multiplier)))
+            transform: translateY(-240px)
             transition-delay: 0.2s
 
+            &.top
+              transform: translateY(240px)
+
           &:nth-child(5)
-            transform: translateY(calc(-300px * var(--react-fab-position-multiplier)))
+            transform: translateY(-300px)
             transition-delay: 0.25s
 
+            &.top
+              transform: translateY(300px)
+
           &:nth-child(6)
-            transform: translateY(calc(-360px * var(--react-fab-position-multiplier)))
+            transform: translateY(-360px)
             transition-delay: 0.3s
+
+            &.top
+              transform: translateY(360px)
 
       > li
         display: block
@@ -98,7 +111,7 @@
         > button
           height: 48px
           width: 48px
-          background-color: #8491e4
+          background-color: #AAAAAA
           display: inline-flex
           justify-content: center
           align-items: center
@@ -121,7 +134,6 @@
           transition: ease-in-out opacity 0.2s
           position: absolute
           top: 50%
-          right: var(--react-fab-text-percent)
           transform: translateY(-50%)
           margin-right: 6px
           background: rgba(0,0,0,.75)
@@ -130,3 +142,6 @@
           color: white
           font-size: 13px
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28)
+
+          &.right
+            right: 100%

@@ -1,0 +1,5 @@
+example
+dist
+node_modules
+rollup.config.js
+.prettierrc.js
