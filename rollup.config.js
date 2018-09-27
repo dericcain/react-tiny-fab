@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import postCss from 'rollup-plugin-postcss';
 import bundleSize from 'rollup-plugin-bundle-size';
 import babel from 'rollup-plugin-babel';
+import cleanup from 'rollup-plugin-cleanup';
 
 import pkg from './package.json';
 
@@ -20,14 +21,17 @@ const plugins = [
     extract: isWatching() ? 'example/src/styles.css' : 'dist/styles.css',
     minimize: false,
   }),
+  cleanup(),
   bundleSize(),
 ];
+
+const banner = `/****  React Tiny FAB - Deric Cain<deric.cain@gmail.com>  *****/`;
 
 export default {
   input: 'src/index.jsx',
   external: ['react', 'react-dom'],
   output: isWatching()
     ? { file: 'example/src/fab.js', format: 'es' }
-    : [{ file: pkg.main, format: 'cjs' }, { file: pkg.module, format: 'es' }],
+    : [{ file: pkg.main, format: 'cjs', banner }, { file: pkg.module, format: 'es', banner }],
   plugins,
 };

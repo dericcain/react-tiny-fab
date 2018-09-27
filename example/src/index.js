@@ -8,9 +8,10 @@ import {
   MdSearch,
   MdCode,
   MdFavorite,
+  MdHelp,
 } from 'react-icons/md';
 
-import { ActionButton, Fab } from './fab';
+import { Action, Fab } from './fab';
 import './styles.css';
 
 const components = [
@@ -75,13 +76,12 @@ const renderComponents = c =>
   c.map(({ mainButtonStyles, actionButtonStyles, position, event }, i) => (
     <Fab
       mainButtonStyles={mainButtonStyles}
-      actionButtonStyles={actionButtonStyles}
       position={position}
-      component={<MdAdd />}
+      icon={<MdAdd />}
       event={event}
       key={i}
     >
-      <ActionButton
+      <Action
         text="Email"
         onClick={e => {
           alert('I printed the event to the console.');
@@ -89,25 +89,74 @@ const renderComponents = c =>
         }}
       >
         <MdEmail />
-      </ActionButton>
-      <ActionButton text="Notifications" onClick={() => alert('Here is your notification.')}>
+      </Action>
+      <Action
+        style={actionButtonStyles}
+        text="Notifications"
+        onClick={() => alert('Here is your notification.')}
+      >
         <MdNotifications />
-      </ActionButton>
-      <ActionButton text="Fullscreen" onClick={() => alert('What?')}>
+      </Action>
+      <Action style={actionButtonStyles} text="Fullscreen" onClick={() => alert('What?')}>
         <MdPages />
-      </ActionButton>
-      <ActionButton text="Search" onClick={() => alert('No search...')}>
+      </Action>
+      <Action style={actionButtonStyles} text="Search" onClick={() => alert('No search...')}>
         <MdSearch />
-      </ActionButton>
-      <ActionButton text="Editor" onClick={e => console.log(e)}>
+      </Action>
+      <Action style={actionButtonStyles} text="Editor" onClick={e => console.log(e)}>
         <MdCode />
-      </ActionButton>
-      <ActionButton text="Like it!" onClick={() => alert('This is fantastic!')}>
+      </Action>
+      <Action
+        style={actionButtonStyles}
+        text="Like it!"
+        onClick={() => alert('This is fantastic!')}
+      >
         <MdFavorite />
-      </ActionButton>
+      </Action>
     </Fab>
   ));
 
-const App = () => <React.Fragment>{renderComponents(components)}</React.Fragment>;
+const click = e => {
+  e.preventDefault();
+  e.stopPropagation();
+  console.log(e);
+};
+
+const abStyles = {
+  position: 'absolute',
+  top: '-110px',
+  right: '100%',
+  padding: '18px',
+  boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+};
+
+const Help = () => (
+  <Fab
+    event="click"
+    position={{ bottom: 0, right: 120 }}
+    mainButtonStyles={{ backgroundColor: '#3498db', width: 160, borderRadius: 48 }}
+    icon={<MdHelp />}
+  >
+    <div style={abStyles} onClick={click}>
+      <h4>Need help?</h4>
+      <div style={{ display: 'flex' }}>
+        <label htmlFor="name">Name</label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label htmlFor="name">Email</label>
+        <input type="text" id="email" />
+      </div>
+      <button>Submit</button>
+    </div>
+  </Fab>
+);
+
+const App = () => (
+  <React.Fragment>
+    {renderComponents(components)}
+    <Help />
+  </React.Fragment>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));

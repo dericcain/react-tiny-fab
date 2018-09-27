@@ -52,19 +52,19 @@ class Fab extends React.Component {
     this.props.event === 'click' ? (this.state.open ? this.close() : this.open()) : null;
 
   rc() {
-    const { children: c, actionButtonStyles: a, position: p } = this.props;
+    const { children: c, position: p } = this.props;
     const cc = React.Children.count(c);
     if (cc > 6) console.warn('react-tiny-fab only supports up to 6 action buttons');
     return React.Children.map(c, ch => (
       <li className={`rtf--ab__c ${'top' in p ? 'top' : ''}`}>
-        {React.cloneElement(ch, { style: a })}
+        {ch}
         {ch.props.text && <span className={'right' in p ? 'right' : ''}>{ch.props.text}</span>}
       </li>
     ));
   }
 
   render() {
-    const { position, component, mainButtonStyles } = this.props;
+    const { position, icon, mainButtonStyles } = this.props;
     return (
       <ul
         onMouseEnter={this.enter}
@@ -74,7 +74,7 @@ class Fab extends React.Component {
       >
         <li className="rtf--mb__c">
           <MB onClick={this.toggle} style={mainButtonStyles}>
-            {component}
+            {icon}
           </MB>
           <ul>{this.rc()}</ul>
         </li>
@@ -83,4 +83,4 @@ class Fab extends React.Component {
   }
 }
 
-export { Fab, AB as ActionButton };
+export { Fab, AB as Action };
