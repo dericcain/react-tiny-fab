@@ -2,12 +2,6 @@ import React from 'react';
 
 import './styles.sass';
 
-let e;
-
-const cl = (click, fn) => {
-  e = document.body.addEventListener('click', () => click && fn());
-};
-
 const AB = p => (
   <button type="button" {...p} className="rtf--ab">
     {p.children}
@@ -28,21 +22,9 @@ class Fab extends React.Component {
 
   state = { open: false };
 
-  componentDidMount() {
-    cl(this.props.event === 'click', this.close);
-  }
+  enter = () => this.props.event === 'hover' && this.open();
 
-  componentWillUnmount() {
-    document.removeEventListener('click', e);
-  }
-
-  get h() {
-    return this.props.event === 'hover';
-  }
-
-  enter = () => this.h && this.open();
-
-  leave = () => this.h && this.close();
+  leave = () => this.props.event === 'hover' && this.close();
 
   open = () => this.setState({ open: true });
 

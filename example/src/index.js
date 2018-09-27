@@ -82,6 +82,7 @@ const renderComponents = c =>
       key={i}
     >
       <Action
+        style={actionButtonStyles}
         text="Email"
         onClick={e => {
           alert('I printed the event to the console.');
@@ -116,12 +117,6 @@ const renderComponents = c =>
     </Fab>
   ));
 
-const click = e => {
-  e.preventDefault();
-  e.stopPropagation();
-  console.log(e);
-};
-
 const abStyles = {
   position: 'absolute',
   top: '-110px',
@@ -130,6 +125,7 @@ const abStyles = {
   boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
 };
 
+// Maybe we should add a prop so that the FAB can be closed externally?
 const Help = () => (
   <Fab
     event="click"
@@ -137,7 +133,7 @@ const Help = () => (
     mainButtonStyles={{ backgroundColor: '#3498db', width: 160, borderRadius: 48 }}
     icon={<MdHelp />}
   >
-    <div style={abStyles} onClick={click}>
+    <div style={abStyles}>
       <h4>Need help?</h4>
       <div style={{ display: 'flex' }}>
         <label htmlFor="name">Name</label>
