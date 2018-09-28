@@ -10,12 +10,18 @@
     "minify"
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    [
-      "remove-test-ids",
-      {
-        "attributes": ["data-testid"]
-      }
-    ]
-  ]
+    "@babel/plugin-proposal-class-properties"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "remove-test-ids",
+          {
+            "attributes": ["data-testid"]
+          }
+        ]
+      ]
+    }
+  }
 }
