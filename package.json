@@ -16,7 +16,7 @@
     "test": "jest",
     "test:release": "npm t && npm run size",
     "preversion": "npm run build:release",
-    "release": "np --no-yarn --contents=dist"
+    "release": "np --no-yarn"
   },
   "jest": {
     "moduleNameMapper": {
