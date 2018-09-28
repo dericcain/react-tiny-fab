@@ -6,3 +6,4 @@ example/src/fab.js
 example/src/styles.css
 example/etc
 .rpt2_cache/
+/coverage/

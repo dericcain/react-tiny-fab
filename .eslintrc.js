@@ -7,9 +7,10 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    'jest/globals': true,
   },
   extends: ['airbnb', 'prettier'],
-  plugins: ['prettier', 'import'],
+  plugins: ['prettier', 'import', 'jest'],
   rules: {
     'prettier/prettier': 1,
     'react/prop-types': 0,

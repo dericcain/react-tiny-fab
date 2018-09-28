@@ -85,5 +85,11 @@ hesitate to submit a PR. If you feel that the API needs to be modified, open an 
 Once you get that going, you should be able to make changes and the page should refresh automatically when those changes
 are saved.
 
+### Testing
+This package is only one JS file and it is tested pretty good. Make sure that none of the tests are breaking if changes
+are made. Also, if you add new functionality and it *warrants* testing, please add tests. If you need help with this, I
+will gladly help.
+
 ## License (MIT)
-[Check it out here.](./LICENSE.md) 
+[Check it out here.](./LICENSE.md)
+ 

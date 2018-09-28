@@ -8,7 +8,7 @@ const AB = p => (
   </button>
 );
 
-const MB = p => (
+export const MB = p => (
   <button type="button" className="rtf--mb" {...p}>
     {p.children}
   </button>
@@ -37,9 +37,9 @@ class Fab extends React.Component {
     const { children: c, position: p } = this.props;
     const cc = React.Children.count(c);
     if (cc > 6) console.warn('react-tiny-fab only supports up to 6 action buttons');
-    return React.Children.map(c, ch => (
+    return React.Children.map(c, (ch, i) => (
       <li className={`rtf--ab__c ${'top' in p ? 'top' : ''}`}>
-        {ch}
+        {React.cloneElement(ch, { 'data-testid': `action-button-${i}` })}
         {ch.props.text && <span className={'right' in p ? 'right' : ''}>{ch.props.text}</span>}
       </li>
     ));
@@ -52,10 +52,11 @@ class Fab extends React.Component {
         onMouseEnter={this.enter}
         onMouseLeave={this.leave}
         className={`rtf ${this.state.open ? 'open' : 'closed'}`}
+        data-testid="fab"
         style={position}
       >
         <li className="rtf--mb__c">
-          <MB onClick={this.toggle} style={mainButtonStyles}>
+          <MB onClick={this.toggle} style={mainButtonStyles} data-testid="main-button">
             {icon}
           </MB>
           <ul>{this.rc()}</ul>
