@@ -1,6 +1,7 @@
 {
   "name": "react-tiny-fab",
   "description": "A tiny Floating Action Button for React.",
+  "keywords": ["react", "material", "fab", "floating action button", "material design", "components", "floating button"],
   "version": "1.0.1",
   "license": "MIT",
   "main": "dist/fab.cjs.js",
