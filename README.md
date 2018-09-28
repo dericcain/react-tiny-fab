@@ -1,11 +1,11 @@
-![React Tiny FAB](./logo.png)
+![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
 
 > A tiny (~1kb gzip) Floating Action Button for React
 
 Want to use a Floating Action Button without having to import the whole Material Design Components library? Weighing in
 at only around 1kb gzipped, React Tiny FAB is a great solution. It is a lightweight, fast, and flexible component.
 
-![React Tiny FAB](./fab.gif)
+![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/fab.gif)
 
 ## Install
 
