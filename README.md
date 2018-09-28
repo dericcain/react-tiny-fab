@@ -24,6 +24,8 @@ import 'react-tiny-fab/styles.css';
 
 Here is an example of how you would use the components:
 ```js
+// The Fab is the main button. Pass any component to the icon prop and choose 
+// either click or hover for the event (default is hover)
 <Fab
   mainButtonStyles={mainButtonStyles}
   actionButtonStyles={actionButtonStyles}
@@ -31,12 +33,26 @@ Here is an example of how you would use the components:
   icon={<MdAdd />}
   event={event}
 >
+  // The Action components are the "buttons" that appear when the Fab is open. You can use the out-of-the-box Action 
+  // component or you can use a custom component of any type and style it any way that you'd like. The "text" prop
+  // is the popup label that appears when the Action component is hovered.
   <Action
     text="Email"
-    onClick={handleOnClick}
+    onClick={handleEmailOnClick}
   >
-    <MdEmail />
+  <Action
+      text="Help"
+      onClick={handleHelpOnClick}
+    >
+    <i className="fa fa-help" />
   </Action>
+  // Using a custom component for this one. See another example in "example/src/index.js"
+  <SomeCustomComponent
+    text="Foobar!"
+    onClick={handleTheFooBarOnClick}
+  >
+      <i className="fa fa-foo-bar-fa-foo" />
+    </SomeCustomComponent>
 </Fab>
 ```
 
