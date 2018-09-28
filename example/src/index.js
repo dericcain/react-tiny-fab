@@ -125,7 +125,14 @@ const abStyles = {
   boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
 };
 
-// Maybe we should add a prop so that the FAB can be closed externally?
+/**
+ * Here, we are using the FAB to create a help popup box. When the button is clicked, the help form appears on the
+ * screen and allows the user to submit the form. This is simply an example to show how versatile the FAB lib can be.
+ * For instance, you can use Styled Components and create a custom component to pass as the Action and with that,
+ * your creativity is the limit on what you can achieve with this.
+ *
+ * --- Maybe we should add a prop so that the FAB can be closed externally? ---
+ */
 const Help = () => (
   <Fab
     event="click"

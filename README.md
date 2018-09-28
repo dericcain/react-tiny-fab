@@ -17,13 +17,13 @@ yarn add react-tiny-fab
 ## Usage
 There are two components available for import - `Fab` and `Action`. You import them like this:
 
-```
+```js
 import { Fab, Action } from 'react-tiny-fab';
 import 'react-tiny-fab/styles.css';
 ```
 
 Here is an example of how you would use the components:
-```
+```js
 <Fab
   mainButtonStyles={mainButtonStyles}
   actionButtonStyles={actionButtonStyles}
@@ -67,6 +67,7 @@ some type of form that submits a contact request.
 |------------|-------------------------|---------|----------|------------------------------------------------------------------------------|
 | `text`     | string                  | ""      | false    | This is the text that will be displayed when one of the actions is hovered.  |
 | `children` | React Element/Component |         | false    | This will be the icon/text for the action.                                   |
+| `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here, e.g. (`onClick`, `style`, etc. |
 
 ## Demo
 Check out the [index.js](./example/src/index.js) file in the example folder for an example of the traditional FAB and 
@@ -89,6 +90,11 @@ are saved.
 This package is only one JS file and it is tested pretty good. Make sure that none of the tests are breaking if changes
 are made. Also, if you add new functionality and it *warrants* testing, please add tests. If you need help with this, I
 will gladly help.
+
+
+## Issues
+If you find an issue, head over to the [Issues](https://github.com/dericgw/react-tiny-fab/issues) section and let me 
+know about it. If you want to be super cool, you can submit a PR that fixes the issue.
 
 ## License (MIT)
 [Check it out here.](./LICENSE.md)

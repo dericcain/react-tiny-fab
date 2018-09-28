@@ -1,9 +1,29 @@
 {
   "name": "react-tiny-fab",
   "description": "A tiny Floating Action Button for React.",
-  "keywords": ["react", "material", "fab", "floating action button", "material design", "components", "floating button"],
   "version": "1.0.1",
   "license": "MIT",
+  "author": "Deric Cain <deric.cain@gmail.com> (https://twitter.com/dericcain)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dericgw/react-tiny-fab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dericgw/react-tiny-fab/issues"
+  },
+  "homepage": "https://github.com/dericgw/react-tiny-fab",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "material",
+    "fab",
+    "floating action button",
+    "material design",
+    "components",
+    "floating button"
+  ],
   "main": "dist/fab.cjs.js",
   "module": "dist/fab.esm.js",
   "scripts": {
