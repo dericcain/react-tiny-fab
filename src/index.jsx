@@ -35,12 +35,22 @@ class Fab extends React.Component {
 
   rc() {
     const { children: c, position: p } = this.props;
+    const { open } = this.state;
     const cc = React.Children.count(c);
     if (cc > 6) console.warn('react-tiny-fab only supports up to 6 action buttons');
     return React.Children.map(c, (ch, i) => (
       <li className={`rtf--ab__c ${'top' in p ? 'top' : ''}`}>
-        {React.cloneElement(ch, { 'data-testid': `action-button-${i}` })}
-        {ch.props.text && <span className={'right' in p ? 'right' : ''}>{ch.props.text}</span>}
+        {React.cloneElement(ch, {
+          'data-testid': `action-button-${i}`,
+          'aria-label': ch.props.text || `Menu button ${i + 1}`,
+          'aria-hidden': !open,
+          ...ch.props,
+        })}
+        {ch.props.text && (
+          <span className={'right' in p ? 'right' : ''} aria-hidden={!open}>
+            {ch.props.text}
+          </span>
+        )}
       </li>
     ));
   }
@@ -56,7 +66,14 @@ class Fab extends React.Component {
         style={position}
       >
         <li className="rtf--mb__c">
-          <MB onClick={this.toggle} style={mainButtonStyles} data-testid="main-button">
+          <MB
+            onClick={this.toggle}
+            style={mainButtonStyles}
+            data-testid="main-button"
+            role="button"
+            aria-label="Floating menu"
+            tabIndex="0"
+          >
             {icon}
           </MB>
           <ul>{this.rc()}</ul>
