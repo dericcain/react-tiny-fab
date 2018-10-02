@@ -261,8 +261,16 @@
           { name: 'wrapper', components: n },
           o.a.createElement(
             r.MDXTag,
-            { name: 'h1', components: n, props: { id: 'react-tiny-fab' } },
-            'React Tiny Fab'
+            { name: 'p', components: n },
+            o.a.createElement(r.MDXTag, {
+              name: 'img',
+              components: n,
+              parentName: 'p',
+              props: {
+                src: 'https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png',
+                alt: 'React Tiny FAB',
+              },
+            })
           ),
           o.a.createElement(
             r.MDXTag,
