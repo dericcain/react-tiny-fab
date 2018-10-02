@@ -1,26 +1,42 @@
+---
+name: React Tiny Fab
+route: /
+---
+
+import { Playground } from 'docz';
+import { Fab, Action } from './';
+
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
 
 > A tiny (~1kb gzip) WIA-ARIA compliant Floating Action Button for React
 
-Want to use a Floating Action Button without having to import the whole Material Design Components library? Weighing in
-at only around 1kb gzipped, React Tiny FAB is a great solution. It is a lightweight, fast, and flexible component.
-
-![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/fab.gif)
-
 ## Install
+```
+   npm install react-tiny-fab
+   yarn add react-tiny-fab
 
 ```
-npm install react-tiny-fab
-yarn add react-tiny-fab
-```
-
 ## Usage
 There are two components available for import - `Fab` and `Action`. You import them like this:
-
-```js
-import { Fab, Action } from 'react-tiny-fab';
-import 'react-tiny-fab/styles.css';
 ```
+   import { Fab, Action } from 'react-tiny-fab';
+   import 'react-tiny-fab/styles.css';
+```
+
+## Example
+Here is an example of how you would use the components:
+
+<Playground>
+  <h4>Check the bottom right of the screen</h4>
+  <Fab icon={<span>+</span>} mainButtonStyles={{backgroundColor: '#e74c3c'}}>
+    <Action text="Add Something" style={{backgroundColor: '#3498db'}}>
+      +
+    </Action>
+    <Action text="Assign Something" style={{backgroundColor: '#3498db'}}>
+      =
+    </Action>
+  </Fab>
+</Playground>
 
 Here is an example of how you would use the components:
 ```js
@@ -72,7 +88,7 @@ This is the main component that controls the Floating Action Button.
 > Based on the `position` prop, the FAB will figure out the direction of the `<Action />` `text` and also which way to 
 > expand when hovered/clicked (up or down).
 
-### `<Action />` 
+### `<Action />`
 This component represents the smaller buttons that appear when the main button is hovered/clicked. Now, you do not have 
 to use this component. You can use your own custom component(s) and create something totally different than a Floating
 Action Button. For instance, you could create your own "Support Button" that when clicked, will display a chat box or 
@@ -85,32 +101,23 @@ some type of form that submits a contact request.
 | `children` | React Element/Component |         | false    | This will be the icon/text for the action.                                   |
 | `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here, e.g. (`onClick`, `style`, etc. |
 
-## Demo
-Check out the [index.js](./example/src/index.js) file in the example folder for an example of the traditional FAB and 
-also a form pop-up that could be used to send contact information, or something else. 
+## Demo 
+Check out the index.js file in the example folder for an example of the traditional FAB and also a form pop-up that could be used to send contact information, or something else.
 
 ## Contributing
-If you find a bug, submit an issue with enough information to reproduce the bug. If you have a fix, please do not 
-hesitate to submit a PR. If you feel that the API needs to be modified, open an issue so that we can discuss it first.
+If you find a bug, submit an issue with enough information to reproduce the bug. If you have a fix, please do not hesitate to submit a PR. If you feel that the API needs to be modified, open an issue so that we can discuss it first.
 
 ### Running the dev environment
-1. Clone the repo - `git clone https://github.com/dericgw/react-tiny-fab.git` && `cd react-tiny-fab`
-2. Install the dependencies - `npm i`
-3. Setup the example - `npm run setup-example`
-4. Start the dev environment (watches for changes and hot-reloads) - `npm run start`
 
-Once you get that going, you should be able to make changes and the page should refresh automatically when those changes
-are saved.
+* Clone the repo - `git clone https://github.com/dericgw/react-tiny-fab.git && cd react-tiny-fab`
+* Install the dependencies - `npm i`
+* Setup the example - `npm run setup-example`
+* Start the dev environment (watches for changes and hot-reloads) - `npm run start`
 
-### Testing
-This package is only one JS file and it is tested pretty good. Make sure that none of the tests are breaking if changes
-are made. Also, if you add new functionality and it *warrants* testing, please add tests. If you need help with this, I
-will gladly help.
+Once you get that going, you should be able to make changes and the page should refresh automatically when those changes are saved.
+Testing
 
+This package is only one JS file and it is tested pretty good. Make sure that none of the tests are breaking if changes are made. Also, if you add new functionality and it warrants testing, please add tests. If you need help with this, I will gladly help.
 
-## Issues
-If you find an issue, head over to the [Issues](https://github.com/dericgw/react-tiny-fab/issues) section and let me 
-know about it. If you want to be super cool, you can submit a PR that fixes the issue.
-
-## License (MIT)
-[Check it out here.](./LICENSE.md)
+## Issues 
+If you find an issue, head over to the Issues section and let me know about it. If you want to be super cool, you can submit a PR that fixes the issue.

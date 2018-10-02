@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles.sass';
+import './styles.scss';
 
 const AB = p => (
   <button type="button" {...p} className="rtf--ab">

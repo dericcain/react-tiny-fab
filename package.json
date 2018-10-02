@@ -29,7 +29,8 @@
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "build:release": "npm run test:release && npm run build",
-    "docz:dev": "docz dev",
+    "docs": "docz dev",
+    "docs:build": "docz build",
     "lint": "eslint src/*.js* --fix",
     "setup-example": "npm --prefix ./example install ./example",
     "start": "WATCH=1 rollup -cw & npm run start:example",
@@ -68,6 +69,7 @@
     "babel-plugin-remove-test-ids": "^1.1.0",
     "babel-preset-minify": "^0.5.0",
     "docz": "^0.12.5",
+    "docz-plugin-css": "^0.11.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.1.0",

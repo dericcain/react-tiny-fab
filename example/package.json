@@ -6,8 +6,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-icons": "^3.1.0",
-    "react-scripts": "1.1.5",
-    "react-tiny-fab": "^1.1.0"
+    "react-scripts": "1.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
