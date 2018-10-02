@@ -39,16 +39,12 @@
     "test": "jest",
     "test:release": "npm t && npm run size",
     "preversion": "npm run build:release",
+    "version": "npm run docs:build && git add docs",
     "release": "np --no-yarn"
   },
   "jest": {
     "moduleNameMapper": {
       "\\.scss$": "<rootDir>/src/__mocks__/styles.js"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run docs:build && git add docs"
     }
   },
   "size-limit": [
@@ -83,7 +79,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.1.0",
     "jest": "^23.6.0",
     "jest-dom": "^1.12.1",
     "node-sass": "^4.9.3",
