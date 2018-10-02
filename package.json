@@ -43,10 +43,10 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.sass$": "<rootDir>/src/__mocks__/styles.js"
+      "\\.scss$": "<rootDir>/src/__mocks__/styles.js"
     }
   },
-  "husky": { 
+  "husky": {
     "hooks": {
       "pre-commit": "npm run docs:build && git add docs"
     }
