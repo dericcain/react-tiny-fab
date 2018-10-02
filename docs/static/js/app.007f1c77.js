@@ -14,7 +14,7 @@
           native: !1,
           dest: './docs',
           hashRouter: !0,
-          base: 'react-tiny-fab',
+          base: '/react-tiny-fab/',
           plugins: [{}],
         },
         entries: {

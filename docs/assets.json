@@ -1,8 +1,8 @@
 {
-  "app.js": "react-tiny-fab/static/js/app.8620fbbe.js",
-  "src-example.css": "react-tiny-fab/static/css/src-example.171aee21f967b5c58053.css",
-  "src-example.js": "react-tiny-fab/static/js/src-example.72227cc4.js",
-  "vendors.js": "react-tiny-fab/static/js/vendors.3eda4688.js",
-  "runtime~app.js": "react-tiny-fab/static/js/runtime~app.171aee21f967b5c58053.js",
-  "index.html": "react-tiny-fab/index.html"
+  "app.js": "/react-tiny-fab/static/js/app.007f1c77.js",
+  "src-example.css": "/react-tiny-fab/static/css/src-example.178e39582474b67ae228.css",
+  "src-example.js": "/react-tiny-fab/static/js/src-example.72227cc4.js",
+  "vendors.js": "/react-tiny-fab/static/js/vendors.3eda4688.js",
+  "runtime~app.js": "/react-tiny-fab/static/js/runtime~app.178e39582474b67ae228.js",
+  "index.html": "/react-tiny-fab/index.html"
 }

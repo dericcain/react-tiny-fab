@@ -34,7 +34,7 @@
         t.push(
           (o[e] = new Promise(function(t, r) {
             for (
-              var n = 'static/css/' + ({ 1: 'src-example' }[e] || e) + '.171aee21f967b5c58053.css',
+              var n = 'static/css/' + ({ 1: 'src-example' }[e] || e) + '.178e39582474b67ae228.css',
                 o = u.p + n,
                 a = document.getElementsByTagName('link'),
                 i = 0;
@@ -153,7 +153,7 @@
     (u.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (u.p = 'react-tiny-fab/'),
+    (u.p = '/react-tiny-fab/'),
     (u.oe = function(e) {
       throw (console.error(e), e);
     });
