@@ -34,7 +34,7 @@
         t.push(
           (o[e] = new Promise(function(t, r) {
             for (
-              var n = 'static/css/' + ({ 1: 'src-example' }[e] || e) + '.031938a621e1aee48576.css',
+              var n = 'static/css/' + ({ 1: 'src-example' }[e] || e) + '.171aee21f967b5c58053.css',
                 o = u.p + n,
                 a = document.getElementsByTagName('link'),
                 i = 0;
@@ -84,7 +84,7 @@
               'static/js/' +
               ({ 1: 'src-example' }[e] || e) +
               '.' +
-              { 1: '100d7e0d' }[e] +
+              { 1: '72227cc4' }[e] +
               '.js'
             );
           })(e)),
@@ -153,7 +153,7 @@
     (u.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (u.p = '/'),
+    (u.p = 'react-tiny-fab/'),
     (u.oe = function(e) {
       throw (console.error(e), e);
     });

@@ -6,13 +6,15 @@
         config: {
           title: 'React Tiny Fab',
           description: 'A tiny Floating Action Button for React.',
-          themeConfig: {},
+          themeConfig: { colors: { primary: '#73A0D4' } },
           menu: [],
           ordering: 'descending',
           version: '1.1.0',
           repository: 'https://github.com/dericgw/react-tiny-fab',
           native: !1,
           dest: './docs',
+          hashRouter: !0,
+          base: 'react-tiny-fab',
           plugins: [{}],
         },
         entries: {
@@ -26,7 +28,6 @@
             order: 0,
             menu: null,
             headings: [
-              { depth: 1, slug: 'react-tiny-fab', value: 'React Tiny Fab' },
               { depth: 2, slug: 'install', value: 'Install' },
               { depth: 2, slug: 'usage', value: 'Usage' },
               { depth: 2, slug: 'example', value: 'Example' },
@@ -68,9 +69,9 @@
         d = t.n(a),
         i = t('./.docz/app/root.jsx'),
         u = [],
-        c = [],
-        r = function() {
-          return c.forEach(function(e) {
+        r = [],
+        c = function() {
+          return r.forEach(function(e) {
             return e && e();
           });
         },
@@ -80,7 +81,7 @@
         u.forEach(function(e) {
           return e && e();
         }),
-          d.a.render(s.a.createElement(e, null), l, r);
+          d.a.render(s.a.createElement(e, null), l, c);
       })(i.a);
     },
     './.docz/app/root.jsx': function(e, n, t) {
@@ -92,12 +93,12 @@
           d = t('./node_modules/docz-theme-default/dist/index.js'),
           i = t.n(d),
           u = t('./.docz/app/imports.js'),
-          c = t('./.docz/app/db.json'),
-          r = function() {
-            return s.a.createElement(i.a, { db: c, imports: u.a, hashRouter: !1 });
+          r = t('./.docz/app/db.json'),
+          c = function() {
+            return s.a.createElement(i.a, { db: r, imports: u.a, hashRouter: !0 });
           };
-        (n.a = Object(a.hot)(e)(r)),
-          (r.__docgenInfo = { description: '', methods: [], displayName: 'Root' });
+        (n.a = Object(a.hot)(e)(c)),
+          (c.__docgenInfo = { description: '', methods: [], displayName: 'Root' });
       }.call(this, t('./node_modules/webpack/buildin/harmony-module.js')(e)));
     },
     0: function(e, n, t) {
