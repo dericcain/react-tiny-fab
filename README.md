@@ -83,7 +83,7 @@ some type of form that submits a contact request.
 |------------|-------------------------|---------|----------|------------------------------------------------------------------------------|
 | `text`     | string                  | ""      | false    | This is the text that will be displayed when one of the actions is hovered.  |
 | `children` | React Element/Component |         | false    | This will be the icon/text for the action.                                   |
-| `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here, e.g. (`onClick`, `style`, etc. |
+| `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here, e.g. (`onClick`, `style`, etc.) |
 
 ## Demo
 Check out the [index.js](./example/src/index.js) file in the example folder for an example of the traditional FAB and 
