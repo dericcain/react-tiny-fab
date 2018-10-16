@@ -19,7 +19,7 @@ There are two components available for import - `Fab` and `Action`. You import t
 
 ```js
 import { Fab, Action } from 'react-tiny-fab';
-import 'react-tiny-fab/styles.css';
+import 'react-tiny-fab/dist/styles.min.css';
 ```
 
 Here is an example of how you would use the components:
