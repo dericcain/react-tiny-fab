@@ -1,6 +1,6 @@
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
 
-> A tiny (~1kb gzip) WIA-ARIA compliant Floating Action Button for React
+> A tiny (~1kb gzip) WAI-ARIA compliant Floating Action Button for React
 
 Want to use a Floating Action Button without having to import the whole Material Design Components library? Weighing in
 at only around 1kb gzipped, React Tiny FAB is a great solution. It is a lightweight, fast, and flexible component.
