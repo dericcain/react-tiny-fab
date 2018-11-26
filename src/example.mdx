@@ -8,13 +8,12 @@ import { Fab, Action } from './';
 
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
 
-> A tiny (~1kb gzip) WIA-ARIA compliant Floating Action Button for React
+> A tiny (~1kb gzip) WAI-ARIA compliant Floating Action Button for React
 
 ## Install
 ```
    npm install react-tiny-fab
    yarn add react-tiny-fab
-
 ```
 ## Usage
 There are two components available for import - `Fab` and `Action`. You import them like this:
@@ -29,10 +28,10 @@ Here is an example of how you would use the components:
 <Playground>
   <h4>Check the bottom right of the screen</h4>
   <Fab icon={<span>+</span>} mainButtonStyles={{backgroundColor: '#e74c3c'}}>
-    <Action text="Add Something" style={{backgroundColor: '#3498db'}}>
+    <Action text="Add Something" style={{backgroundColor: '#3498db'}} onClick={() => alert('It works!')}>
       +
     </Action>
-    <Action text="Assign Something" style={{backgroundColor: '#3498db'}}>
+    <Action text="Assign Something" style={{backgroundColor: '#3498db'}} onClick={() => alert('It still works!')}>
       =
     </Action>
   </Fab>

@@ -83,6 +83,8 @@ describe('<Fab />', () => {
     });
 
     it('should allow the onClick handler to fire', () => {
+      // We use a setTimeout in our onClick handler
+      jest.useFakeTimers();
       const spy = jest.fn();
       const { getByTestId } = render(
         <Fab icon={<span>+</span>} event="click">
@@ -95,6 +97,8 @@ describe('<Fab />', () => {
 
       fireEvent.click(fab);
       fireEvent.click(action);
+
+      jest.runAllTimers();
 
       expect(spy).toHaveBeenCalled();
     });
