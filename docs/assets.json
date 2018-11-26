@@ -1,8 +1,14 @@
 {
-  "app.js": "/react-tiny-fab/static/js/app.a7e9a57d.js",
-  "src-example.css": "/react-tiny-fab/static/css/src-example.5baf8dbf71c391e57e40.css",
-  "src-example.js": "/react-tiny-fab/static/js/src-example.de4ed50c.js",
-  "vendors.js": "/react-tiny-fab/static/js/vendors.2b6158bd.js",
-  "runtime~app.js": "/react-tiny-fab/static/js/runtime~app.5baf8dbf71c391e57e40.js",
+  "app.js": "/react-tiny-fab/static/js/app.59347683.js",
+  "app.js.map": "/react-tiny-fab/static/js/app.7a2fd2511de011ed021e.js.map",
+  "runtime~app.js": "/react-tiny-fab/static/js/runtime~app.7a2fd2511de011ed021e.js",
+  "runtime~app.js.map": "/react-tiny-fab/static/js/runtime~app.7a2fd2511de011ed021e.js.map",
+  "src-example.css": "/react-tiny-fab/static/css/src-example.7a2fd2511de011ed021e.css",
+  "src-example.js": "/react-tiny-fab/static/js/src-example.527682e3.js",
+  "src-example.js.map": "/react-tiny-fab/static/js/src-example.7a2fd2511de011ed021e.js.map",
+  "vendors.js": "/react-tiny-fab/static/js/vendors.f34dc351.js",
+  "vendors.js.map": "/react-tiny-fab/static/js/vendors.7a2fd2511de011ed021e.js.map",
+  "static/js/4.7ba22ac6.js": "/react-tiny-fab/static/js/4.7ba22ac6.js",
+  "static/js/4.7a2fd2511de011ed021e.js.map": "/react-tiny-fab/static/js/4.7a2fd2511de011ed021e.js.map",
   "index.html": "/react-tiny-fab/index.html"
 }
