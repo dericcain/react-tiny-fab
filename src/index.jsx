@@ -33,11 +33,20 @@ class Fab extends React.Component {
   toggle = () =>
     this.props.event === 'click' ? (this.state.open ? this.close() : this.open()) : null;
 
+  actionOnClick = userFunc => {
+    this.setState({ open: false }, () => {
+      // Hack to allow the FAB to close before the user event fires
+      setTimeout(() => {
+        userFunc();
+      }, 1);
+    });
+  };
+
   rc() {
     const { children: c, position: p } = this.props;
     const { open } = this.state;
-    const cc = React.Children.count(c);
-    if (cc > 6) console.warn('react-tiny-fab only supports up to 6 action buttons');
+    if (React.Children.count(c) > 6)
+      console.warn('react-tiny-fab only supports up to 6 action buttons');
     return React.Children.map(c, (ch, i) => (
       <li className={`rtf--ab__c ${'top' in p ? 'top' : ''}`}>
         {React.cloneElement(ch, {
@@ -45,6 +54,7 @@ class Fab extends React.Component {
           'aria-label': ch.props.text || `Menu button ${i + 1}`,
           'aria-hidden': !open,
           ...ch.props,
+          onClick: () => this.actionOnClick(ch.props.onClick),
         })}
         {ch.props.text && (
           <span className={'right' in p ? 'right' : ''} aria-hidden={!open}>
