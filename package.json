@@ -1,7 +1,7 @@
 {
   "name": "react-tiny-fab",
   "description": "A tiny Floating Action Button for React.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "author": "Deric Cain <deric.cain@gmail.com> (https://twitter.com/dericcain)",
   "repository": {
@@ -54,8 +54,8 @@
     }
   ],
   "peerDependencies": {
-    "react": ">= 15.4",
-    "react-dom": ">= 15.4"
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
@@ -69,8 +69,9 @@
     "babel-plugin-jsx-remove-data-test-id": "^1.1.4",
     "babel-plugin-remove-test-ids": "^1.1.0",
     "babel-preset-minify": "^0.5.0",
-    "docz": "^0.12.5",
+    "docz": "^0.13.7",
     "docz-plugin-css": "^0.11.0",
+    "docz-theme-default": "^0.13.7",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.1.0",
@@ -84,8 +85,8 @@
     "node-sass": "^4.9.3",
     "np": "^3.0.4",
     "prettier": "^1.14.3",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "react-icons": "^3.1.0",
     "react-testing-library": "^5.1.0",
     "regenerator-runtime": "^0.12.1",
@@ -96,6 +97,7 @@
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-postcss": "^1.6.2",
-    "size-limit": "^0.20.0"
+    "size-limit": "^0.20.0",
+    "webpack": "^4.28.4"
   }
 }
