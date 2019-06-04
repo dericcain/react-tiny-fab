@@ -3,11 +3,11 @@
 // Definitions by:  Ji-Hoon Lee <https://github.com/NoMoreViolence>
 // TypeScript Version: 3.4.5
 
-import { ReactElement, DOMAttributes, CSSProperties } from 'react';
+import { ReactElement, DOMAttributes, CSSProperties, HTMLAttributes } from 'react';
 
 interface ActionProps {
+  text?: string;
   children?: ReactElement;
-  text: string;
 }
 interface FabProps {
   mainButtonStyles?: CSSProperties;
@@ -17,7 +17,7 @@ interface FabProps {
   children?: ReactElement[] | ReactElement;
 }
 
-type Action = (props: ActionProps & DOMAttributes<HTMLButtonElement>) => ReactElement;
+type Action = (props: ActionProps & DOMAttributes<HTMLElement> & HTMLAttributes<HTMLElement>) => ReactElement;
 type Fab = (props: FabProps) => ReactElement;
 
 declare const Action: Action;
