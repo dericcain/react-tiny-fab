@@ -49,7 +49,7 @@ const Fab = ({ event, children, position, icon, mainButtonStyles }) => {
         )}
       </li>
     ));
-  }
+  };
 
   return (
     <ul
@@ -74,10 +74,10 @@ const Fab = ({ event, children, position, icon, mainButtonStyles }) => {
       </li>
     </ul>
   );
-}
+};
 
 Fab.defaultProps = {
-  position: { bottom: 0, right: 0 },
+  position: { bottom: 24, right: 24 },
   event: 'hover',
 };
 

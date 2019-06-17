@@ -18,7 +18,7 @@ const plugins = [
   babel(),
   postCss({
     extensions: ['.sass'],
-    extract: isWatching() ? 'example/src/styles.css' : 'dist/styles.css',
+    extract: isWatching() ? 'example/styles.css' : 'dist/styles.css',
     minimize: false,
   }),
   cleanup(),
@@ -31,7 +31,12 @@ export default {
   input: 'src/index.jsx',
   external: ['react', 'react-dom'],
   output: isWatching()
-    ? { file: 'example/src/fab.js', format: 'es' }
+    ? {
+        file: 'example/fab.js',
+        format: 'umd',
+        name: 'ReactTinyFab',
+        globals: { React: 'react', ReactDOM: 'react-dom' },
+      }
     : [{ file: pkg.main, format: 'cjs', banner }, { file: pkg.module, format: 'es', banner }],
   plugins,
 };

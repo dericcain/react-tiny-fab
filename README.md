@@ -1,9 +1,11 @@
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
 
-> A tiny (~1kb gzip) WAI-ARIA compliant Floating Action Button for React
+> A tiny (~670 byte gzip) WAI-ARIA compliant Floating Action Button for React
+
+> `react-tiny-fab` v3 now relies on React version 16.8 and up because it is implemented using [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 Want to use a Floating Action Button without having to import the whole Material Design Components library? Weighing in
-at only around 1kb gzipped, React Tiny FAB is a great solution. It is a lightweight, fast, and flexible component.
+at only around 671 bytes gzipped, React Tiny FAB is a great solution. It is a lightweight, fast, and flexible component.
 
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/fab.gif)
 
@@ -64,7 +66,7 @@ This is the main component that controls the Floating Action Button.
 | Prop                 | Type                       | Default                   | Required | Description                                                                                                                                |
 |----------------------|----------------------------|-------------------------- |----------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | `mainButtonStyles`   | React.CSSProperties object | {}                        | false    | This object is passed to the main button's `style` prop so use React styles to style the button.                                           |
-| `position`           | object                     | `{ bottom: 0, right: 0 }` | false    | Where do you want your FAB to be located? Use `top`, `left`, `bottom`, `right` properties to declare where you want the FAB to be positioned. |
+| `position`           | object                     | `{ bottom: 24, right: 24 }` | false    | Where do you want your FAB to be located? Use `top`, `left`, `bottom`, `right` properties to declare where you want the FAB to be positioned. |
 | `icon`               | React Element/Component    |                           | true     | This element/component will be the used as the icon for the main button. This can be text, or a Font Awesome icon, or any other component. |
 | `event`              | string                     | 'hover'                   | false    | What type of event do you want to make the FAB menu active? This can be either `click` or `hover`.                                         |
 | `children`           | React Element/Component    |                           | false    | This is the children that will be mapped and rendered. This can be anything. There can be up to 6, but no more than 6. An `Action` component is provided out of the box.           |
@@ -86,7 +88,7 @@ some type of form that submits a contact request.
 | `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here, e.g. (`onClick`, `style`, etc.) |
 
 ## Demo
-Check out the [index.js](./example/src/index.js) file in the example folder for an example of the traditional FAB and 
+Check out the [index.js](./example/index.html) file in the example folder for an example of the traditional FAB and 
 also a form pop-up that could be used to send contact information, or something else. 
 
 ## Contributing
@@ -96,8 +98,7 @@ hesitate to submit a PR. If you feel that the API needs to be modified, open an 
 ### Running the dev environment
 1. Clone the repo - `git clone https://github.com/dericgw/react-tiny-fab.git` && `cd react-tiny-fab`
 2. Install the dependencies - `npm i`
-3. Setup the example - `npm run setup-example`
-4. Start the dev environment (watches for changes and hot-reloads) - `npm run start`
+3. Run the example - `npm start` _Visit http://localhost:5000_
 
 Once you get that going, you should be able to make changes and the page should refresh automatically when those changes
 are saved.
