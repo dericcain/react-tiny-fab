@@ -26,6 +26,7 @@
   ],
   "main": "dist/fab.cjs.js",
   "module": "dist/fab.esm.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "build:release": "npm run test:release && npm run build",
