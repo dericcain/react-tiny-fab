@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 
 import './styles.scss';
@@ -49,7 +48,7 @@ class Fab extends React.Component {
     if (React.Children.count(c) > 6)
       console.warn('react-tiny-fab only supports up to 6 action buttons');
     return React.Children.map(c, (ch, i) => (
-      <li className={`rtf--ab__c ${showTitle ? 'rtf--ab__cc' : ''} ${'top' in p ? 'top' : ''}`}>
+      <li className={`rtf--ab__c ${alwaysShowTitle ? 'rtf--ab__cc' : ''} ${'top' in p ? 'top' : ''}`}>
         {React.cloneElement(ch, {
           'data-testid': `action-button-${i}`,
           'aria-label': ch.props.text || `Menu button ${i + 1}`,
