@@ -14,7 +14,16 @@ export const MB = p => (
   </button>
 );
 
-const Fab = ({ event, children, position, icon, mainButtonStyles }) => {
+const defaultPosition = { bottom: 24, right: 24 };
+
+const Fab = ({
+  event = 'hover',
+  position = defaultPosition,
+  alwaysShowTitle = false,
+  children,
+  icon,
+  mainButtonStyles,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = () => setIsOpen(true);
@@ -33,17 +42,24 @@ const Fab = ({ event, children, position, icon, mainButtonStyles }) => {
   const rc = () => {
     if (React.Children.count(children) > 6)
       console.warn('react-tiny-fab only supports up to 6 action buttons');
+    const ariaHidden = alwaysShowTitle || !isOpen;
+
     return React.Children.map(children, (ch, i) => (
       <li className={`rtf--ab__c ${'top' in position ? 'top' : ''}`}>
         {React.cloneElement(ch, {
           'data-testid': `action-button-${i}`,
           'aria-label': ch.props.text || `Menu button ${i + 1}`,
-          'aria-hidden': !isOpen,
+          'aria-hidden': ariaHidden,
           ...ch.props,
           onClick: () => actionOnClick(ch.props.onClick),
         })}
         {ch.props.text && (
-          <span className={'right' in position ? 'right' : ''} aria-hidden={!isOpen}>
+          <span
+            className={`${'right' in position ? 'right' : ''} ${
+              alwaysShowTitle ? 'always-show' : ''
+            }`}
+            aria-hidden={ariaHidden}
+          >
             {ch.props.text}
           </span>
         )}
@@ -74,11 +90,6 @@ const Fab = ({ event, children, position, icon, mainButtonStyles }) => {
       </li>
     </ul>
   );
-};
-
-Fab.defaultProps = {
-  position: { bottom: 24, right: 24 },
-  event: 'hover',
 };
 
 export { Fab, AB as Action };

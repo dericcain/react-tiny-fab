@@ -21,6 +21,7 @@
             left: 0,
           },
           event: 'hover',
+          alwaysShowTitle: true,
           mainButtonStyles: {
             backgroundColor: '#27ae60',
           },
@@ -73,13 +74,14 @@
       ];
 
       const renderComponents = c =>
-        c.map(({ mainButtonStyles, actionButtonStyles, position, event }, i) => (
+        c.map(({ mainButtonStyles, actionButtonStyles, position, event, alwaysShowTitle }, i) => (
           <Fab
             mainButtonStyles={mainButtonStyles}
             position={position}
             icon="+"
             event={event}
             key={i}
+            alwaysShowTitle={alwaysShowTitle}
           >
             <Action
               style={actionButtonStyles}

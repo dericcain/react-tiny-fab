@@ -1,6 +1,6 @@
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
 
-> A tiny (~670 byte gzip) WAI-ARIA compliant Floating Action Button for React
+> A tiny (~700 byte gzip) WAI-ARIA compliant Floating Action Button for React
 
 > `react-tiny-fab` v3 now relies on React version 16.8 and up because it is implemented using [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 

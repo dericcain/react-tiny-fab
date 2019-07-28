@@ -8,7 +8,7 @@ import { Fab, Action } from './';
 
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
 
-> A tiny (~670 byte gzip) WAI-ARIA compliant Floating Action Button for React
+> A tiny (~700 byte gzip) WAI-ARIA compliant Floating Action Button for React
 
 ## Install
 ```
@@ -50,6 +50,7 @@ Here is an example of how you would use the components:
   position={position}
   icon={<MdAdd />}
   event={event}
+  alwaysShowTitle={true}
 >
   // The Action components are the "buttons" that appear when the Fab is open. You can use the out-of-the-box Action 
   // component or you can use a custom component of any type and style it any way that you'd like. The "text" prop
@@ -86,6 +87,7 @@ This is the main component that controls the Floating Action Button.
 | `icon`               | React Element/Component    |                           | true     | This element/component will be the used as the icon for the main button. This can be text, or a Font Awesome icon, or any other component. |
 | `event`              | string                     | 'hover'                   | false    | What type of event do you want to make the FAB menu active? This can be either `click` or `hover`.                                         |
 | `children`           | React Element/Component    |                           | false    | This is the children that will be mapped and rendered. This can be anything. There can be up to 6, but no more than 6. An `Action` component is provided out of the box.           |
+| `alwaysShowTitle`    | boolean                    | false                     | false    | If the title of the `Action` component should always be shown (not just on hover), set this to true and the title will always be shown |
 
 > Based on the `position` prop, the FAB will figure out the direction of the `<Action />` `text` and also which way to 
 > expand when hovered/clicked (up or down).
