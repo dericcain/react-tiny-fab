@@ -19,6 +19,14 @@
         padding: 0;
       }
     }
+
+    .rtf--ab__cc{
+      > span {
+        transition: ease-in-out opacity 0.2s;
+        opacity: 0.9;
+      }
+    }
+
     .rtf--ab__c {
       &:hover {
         > span {
