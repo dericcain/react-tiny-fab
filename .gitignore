@@ -3,8 +3,11 @@ node_modules
 yarn-error.log
 dist
 example/node_modules
-example/src/fab.js
-example/src/styles.css
+example/fab.js
+example/styles.css
 example/etc
 .rpt2_cache/
 /coverage/
+.idea
+docs
+

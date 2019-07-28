@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './styles.scss';
 
@@ -14,83 +14,82 @@ export const MB = p => (
   </button>
 );
 
-class Fab extends React.Component {
-  static defaultProps = {
-    position: { bottom: 0, right: 0 },
-    event: 'hover',
+const defaultPosition = { bottom: 24, right: 24 };
+
+const Fab = ({
+  event = 'hover',
+  position = defaultPosition,
+  alwaysShowTitle = false,
+  children,
+  icon,
+  mainButtonStyles,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const open = () => setIsOpen(true);
+  const close = () => setIsOpen(false);
+  const enter = () => event === 'hover' && open();
+  const leave = () => event === 'hover' && close();
+  const toggle = () => (event === 'click' ? (isOpen ? close() : open()) : null);
+
+  const actionOnClick = userFunc => {
+    setIsOpen(false);
+    setTimeout(() => {
+      userFunc();
+    }, 1);
   };
 
-  state = { open: false };
-
-  enter = () => this.props.event === 'hover' && this.open();
-
-  leave = () => this.props.event === 'hover' && this.close();
-
-  open = () => this.setState({ open: true });
-
-  close = () => this.setState({ open: false });
-
-  toggle = () =>
-    this.props.event === 'click' ? (this.state.open ? this.close() : this.open()) : null;
-
-  actionOnClick = userFunc => {
-    this.setState({ open: false }, () => {
-      // Hack to allow the FAB to close before the user event fires
-      setTimeout(() => {
-        userFunc();
-      }, 1);
-    });
-  };
-
-  rc() {
-    const { children: c, position: p, showTitle } = this.props;
-    const { open } = this.state;
-    if (React.Children.count(c) > 6)
+  const rc = () => {
+    if (React.Children.count(children) > 6)
       console.warn('react-tiny-fab only supports up to 6 action buttons');
-    return React.Children.map(c, (ch, i) => (
-      <li className={`rtf--ab__c ${alwaysShowTitle ? 'rtf--ab__cc' : ''} ${'top' in p ? 'top' : ''}`}>
+    const ariaHidden = alwaysShowTitle || !isOpen;
+
+    return React.Children.map(children, (ch, i) => (
+      <li className={`rtf--ab__c ${'top' in position ? 'top' : ''}`}>
         {React.cloneElement(ch, {
           'data-testid': `action-button-${i}`,
           'aria-label': ch.props.text || `Menu button ${i + 1}`,
-          'aria-hidden': !open,
+          'aria-hidden': ariaHidden,
           ...ch.props,
-          onClick: () => this.actionOnClick(ch.props.onClick),
+          onClick: () => actionOnClick(ch.props.onClick),
         })}
         {ch.props.text && (
-          <span className={'right' in p ? 'right' : ''} aria-hidden={!open}>
+          <span
+            className={`${'right' in position ? 'right' : ''} ${
+              alwaysShowTitle ? 'always-show' : ''
+            }`}
+            aria-hidden={ariaHidden}
+          >
             {ch.props.text}
           </span>
         )}
       </li>
     ));
-  }
+  };
 
-  render() {
-    const { position, icon, mainButtonStyles } = this.props;
-    return (
-      <ul
-        onMouseEnter={this.enter}
-        onMouseLeave={this.leave}
-        className={`rtf ${this.state.open ? 'open' : 'closed'}`}
-        data-testid="fab"
-        style={position}
-      >
-        <li className="rtf--mb__c">
-          <MB
-            onClick={this.toggle}
-            style={mainButtonStyles}
-            data-testid="main-button"
-            role="button"
-            aria-label="Floating menu"
-            tabIndex="0"
-          >
-            {icon}
-          </MB>
-          <ul>{this.rc()}</ul>
-        </li>
-      </ul>
-    );
-  }
-}
+  return (
+    <ul
+      onMouseEnter={enter}
+      onMouseLeave={leave}
+      className={`rtf ${isOpen ? 'open' : 'closed'}`}
+      data-testid="fab"
+      style={position}
+    >
+      <li className="rtf--mb__c">
+        <MB
+          onClick={toggle}
+          style={mainButtonStyles}
+          data-testid="main-button"
+          role="button"
+          aria-label="Floating menu"
+          tabIndex="0"
+        >
+          {icon}
+        </MB>
+        <ul>{rc()}</ul>
+      </li>
+    </ul>
+  );
+};
 
 export { Fab, AB as Action };
