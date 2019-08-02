@@ -44,27 +44,31 @@ const Fab = ({
       console.warn('react-tiny-fab only supports up to 6 action buttons');
     const ariaHidden = alwaysShowTitle || !isOpen;
 
-    return React.Children.map(children, (ch, i) => (
-      <li className={`rtf--ab__c ${'top' in position ? 'top' : ''}`}>
-        {React.cloneElement(ch, {
-          'data-testid': `action-button-${i}`,
-          'aria-label': ch.props.text || `Menu button ${i + 1}`,
-          'aria-hidden': ariaHidden,
-          ...ch.props,
-          onClick: () => actionOnClick(ch.props.onClick),
-        })}
-        {ch.props.text && (
-          <span
-            className={`${'right' in position ? 'right' : ''} ${
-              alwaysShowTitle ? 'always-show' : ''
-            }`}
-            aria-hidden={ariaHidden}
-          >
-            {ch.props.text}
-          </span>
-        )}
-      </li>
-    ));
+    return React.Children.map(
+      children,
+      (ch, i) =>
+        ch && (
+          <li className={`rtf--ab__c ${'top' in position ? 'top' : ''}`}>
+            {React.cloneElement(ch, {
+              'data-testid': `action-button-${i}`,
+              'aria-label': ch.props.text || `Menu button ${i + 1}`,
+              'aria-hidden': ariaHidden,
+              ...ch.props,
+              onClick: () => actionOnClick(ch.props.onClick),
+            })}
+            {ch.props.text && (
+              <span
+                className={`${'right' in position ? 'right' : ''} ${
+                  alwaysShowTitle ? 'always-show' : ''
+                }`}
+                aria-hidden={ariaHidden}
+              >
+                {ch.props.text}
+              </span>
+            )}
+          </li>
+        )
+    );
   };
 
   return (
