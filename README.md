@@ -21,7 +21,7 @@ There are two components available for import - `Fab` and `Action`. You import t
 
 ```js
 import { Fab, Action } from 'react-tiny-fab';
-import 'react-tiny-fab/dist/styles.min.css';
+import 'react-tiny-fab/dist/styles.css';
 ```
 
 Here is an example of how you would use the components:
@@ -41,7 +41,7 @@ Here is an example of how you would use the components:
   <Action
     text="Email"
     onClick={handleEmailOnClick}
-  >
+  />
   <Action
       text="Help"
       onClick={handleHelpOnClick}
