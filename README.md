@@ -67,7 +67,7 @@ This is the main component that controls the Floating Action Button.
 |----------------------|----------------------------|-------------------------- |----------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | `mainButtonStyles`   | React.CSSProperties object | {}                        | false    | This object is passed to the main button's `style` prop so use React styles to style the button.                                           |
 | `position`           | object                     | `{ bottom: 24, right: 24 }` | false    | Where do you want your FAB to be located? Use `top`, `left`, `bottom`, `right` properties to declare where you want the FAB to be positioned. |
-| `icon`               | React Element/Component    |                           | true     | This element/component will be the used as the icon for the main button. This can be text, or a Font Awesome icon, or any other component. |
+| `icon`               | React Element/Component    |                           | true     | This element/component will be used as the icon for the main button. This can be text, or a Font Awesome icon, or any other component. |
 | `event`              | string                     | 'hover'                   | false    | What type of event do you want to make the FAB menu active? This can be either `click` or `hover`.                                         |
 | `children`           | React Element/Component    |                           | false    | This is the children that will be mapped and rendered. This can be anything. There can be up to 6, but no more than 6. An `Action` component is provided out of the box.           |
 
