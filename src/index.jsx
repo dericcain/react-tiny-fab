@@ -23,6 +23,7 @@ const Fab = ({
   children,
   icon,
   mainButtonStyles,
+  onClick = () => {},
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,7 +31,11 @@ const Fab = ({
   const close = () => setIsOpen(false);
   const enter = () => event === 'hover' && open();
   const leave = () => event === 'hover' && close();
-  const toggle = () => (event === 'click' ? (isOpen ? close() : open()) : null);
+  const toggle = e => {
+    e.persist();
+    onClick(e);
+    return event === 'click' ? (isOpen ? close() : open()) : null;
+  };
 
   const actionOnClick = userFunc => {
     setIsOpen(false);
