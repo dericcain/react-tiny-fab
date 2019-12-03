@@ -70,6 +70,8 @@ This is the main component that controls the Floating Action Button.
 | `icon`               | React Element/Component    |                           | true     | This element/component will be used as the icon for the main button. This can be text, or a Font Awesome icon, or any other component. |
 | `event`              | string                     | 'hover'                   | false    | What type of event do you want to make the FAB menu active? This can be either `click` or `hover`.                                         |
 | `children`           | React Element/Component    |                           | false    | This is the children that will be mapped and rendered. This can be anything. There can be up to 6, but no more than 6. An `Action` component is provided out of the box.           |
+| `onClick`            | function                   | null                      | false    | If you only need to use the main button for something, then you can attach an `onClick` handler to the main button. The React Synthetic Event will be passed in just like a normal `onClick` |
+| `text`               | string                     | null                      | false    | If you attach an `onClick` handler to the main button, then the original `Action` components would not show. Instead you can attach `text` to display while user hover the FAB |
 
 > Based on the `position` prop, the FAB will figure out the direction of the `<Action />` `text` and also which way to 
 > expand when hovered/clicked (up or down).

@@ -23,17 +23,20 @@ const Fab = ({
   children,
   icon,
   mainButtonStyles,
-  onClick = () => {},
+  onClick,
+  text,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const ariaHidden = alwaysShowTitle || !isOpen;
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
   const enter = () => event === 'hover' && open();
   const leave = () => event === 'hover' && close();
   const toggle = e => {
+    if (onClick) {
+      return onClick(e);
+    }
     e.persist();
-    onClick(e);
     return event === 'click' ? (isOpen ? close() : open()) : null;
   };
 
@@ -47,7 +50,6 @@ const Fab = ({
   const rc = () => {
     if (React.Children.count(children) > 6)
       console.warn('react-tiny-fab only supports up to 6 action buttons');
-    const ariaHidden = alwaysShowTitle || !isOpen;
 
     return React.Children.map(
       children,
@@ -95,6 +97,16 @@ const Fab = ({
         >
           {icon}
         </MB>
+        {onClick && text && (
+          <span
+            className={`${'right' in position ? 'right' : ''} ${
+              alwaysShowTitle ? 'always-show' : ''
+            }`}
+            aria-hidden={ariaHidden}
+          >
+            {text}
+          </span>
+        )}
         <ul>{rc()}</ul>
       </li>
     </ul>

@@ -160,6 +160,21 @@
       const App = () => (
         <React.Fragment>
           {renderComponents(components)}
+          <Fab
+            mainButtonStyles={{
+              backgroundColor: '#00b5ad',
+            }}
+            position={{
+              bottom: 100,
+              right: 100,
+            }}
+            icon="+"
+            event="hover"
+            key={-1}
+            alwaysShowTitle={false}
+            onClick={() => alert('Here is the action of FAB.')}
+            text="TextForFAB"
+          />
           <Help />
         </React.Fragment>
       );
