@@ -82,6 +82,34 @@
   *:last-child {
     margin-bottom: 0;
   }
+  &:hover {
+    > span {
+      transition: ease-in-out opacity 0.2s;
+      opacity: 0.9;
+    }
+  }
+  > span.always-show {
+    transition: ease-in-out opacity 0.2s;
+    opacity: 0.9;
+  }
+  > span {
+    opacity: 0;
+    transition: ease-in-out opacity 0.2s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 6px;
+    margin-left: 4px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: white;
+    font-size: 13px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+    &.right {
+      right: 100%;
+    }
+  }
 }
 
 .rtf--mb {

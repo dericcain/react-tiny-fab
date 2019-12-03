@@ -16,6 +16,8 @@ interface FabProps {
   event?: 'hover' | 'click';
   children?: ReactElement[] | ReactElement;
   alwaysShowTitle?: boolean;
+  text?: string;
+  onClick?: (e: any) => any;
 }
 
 type Action = (props: ActionProps & DOMAttributes<HTMLElement> & HTMLAttributes<HTMLElement>) => ReactElement;
