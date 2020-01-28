@@ -60,6 +60,7 @@ const Fab = ({
               'data-testid': `action-button-${i}`,
               'aria-label': ch.props.text || `Menu button ${i + 1}`,
               'aria-hidden': ariaHidden,
+              'tabIndex': isOpen ? 0 : -1,
               ...ch.props,
               onClick: () => actionOnClick(ch.props.onClick),
             })}
