@@ -40,18 +40,16 @@ const Fab = ({
     return event === 'click' ? (isOpen ? close() : open()) : null;
   };
 
-  const actionOnClick = userFunc => {
+  const actionOnClick = (e, userFunc) => {
+    e.persist();
     setIsOpen(false);
     setTimeout(() => {
-      userFunc();
+      userFunc(e);
     }, 1);
   };
 
-  const rc = () => {
-    if (React.Children.count(children) > 6)
-      console.warn('react-tiny-fab only supports up to 6 action buttons');
-
-    return React.Children.map(
+  const rc = () =>
+    React.Children.map(
       children,
       (ch, i) =>
         ch && (
@@ -62,7 +60,7 @@ const Fab = ({
               'aria-hidden': ariaHidden,
               tabIndex: isOpen ? 0 : -1,
               ...ch.props,
-              onClick: () => actionOnClick(ch.props.onClick),
+              onClick: e => actionOnClick(e, ch.props.onClick),
             })}
             {ch.props.text && (
               <span
@@ -77,7 +75,6 @@ const Fab = ({
           </li>
         )
     );
-  };
 
   return (
     <ul

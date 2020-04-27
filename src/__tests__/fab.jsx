@@ -100,6 +100,8 @@ describe('<Fab />', () => {
 
       jest.runAllTimers();
 
+      // Make sure the click event is being passed to consumer function
+      expect(spy.mock.calls[0][0].target).toBeDefined();
       expect(spy).toHaveBeenCalled();
     });
   });
