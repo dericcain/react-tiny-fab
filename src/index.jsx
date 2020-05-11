@@ -95,7 +95,7 @@ const Fab = ({
         >
           {icon}
         </MB>
-        {onClick && text && (
+        {text && (
           <span
             className={`${'right' in position ? 'right' : ''} ${
               alwaysShowTitle ? 'always-show' : ''
