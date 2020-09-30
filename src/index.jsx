@@ -60,7 +60,10 @@ const Fab = ({
               'aria-hidden': ariaHidden,
               tabIndex: isOpen ? 0 : -1,
               ...ch.props,
-              onClick: e => actionOnClick(e, ch.props.onClick),
+              onClick: e => {
+                if (ch.props.onClick)
+                  actionOnClick(e, ch.props.onClick)
+              },
             })}
             {ch.props.text && (
               <span
