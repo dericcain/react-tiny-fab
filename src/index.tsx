@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import './styles.scss';
 
 interface ABProps extends React.HTMLAttributes<HTMLButtonElement> {
-  text?: string
-  onClick?: (e: React.FormEvent) => void
-  'data-testid'?: string
+  text?: string;
+  onClick?: (e: React.FormEvent) => void;
+  'data-testid'?: string;
 }
 
 const AB: React.FC<ABProps> = ({ children, ...p }) => (
@@ -15,7 +15,7 @@ const AB: React.FC<ABProps> = ({ children, ...p }) => (
 );
 
 interface MBProps extends Omit<React.HTMLAttributes<HTMLButtonElement>, 'tabIndex'> {
-  tabIndex?: number
+  tabIndex?: number;
 }
 
 export const MB: React.FC<MBProps> = ({ children, ...p }) => (
@@ -25,10 +25,10 @@ export const MB: React.FC<MBProps> = ({ children, ...p }) => (
 );
 
 interface Position {
-  top?: number
-  right?: number
-  bottom?: number
-  left?: number
+  top?: number;
+  right?: number;
+  bottom?: number;
+  left?: number;
 }
 
 const defaultPosition: Position = { bottom: 24, right: 24 };
@@ -41,7 +41,7 @@ interface FabProps {
   mainButtonStyles?: React.CSSProperties;
   onClick?: (e: React.FormEvent) => void;
   text?: string;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 const Fab: React.FC<FabProps> = ({
@@ -78,36 +78,34 @@ const Fab: React.FC<FabProps> = ({
 
   const rc = () =>
     React.Children.map(children, (ch, i) => {
-        if (React.isValidElement<ABProps>(ch)) {
-          return (
-              <li className={`rtf--ab__c ${'top' in position ? 'top' : ''}`}>
-                {React.cloneElement(ch, {
-                  'data-testid': `action-button-${i}`,
-                  'aria-label': ch.props.text || `Menu button ${i + 1}`,
-                  'aria-hidden': ariaHidden,
-                  tabIndex: isOpen ? 0 : -1,
-                  ...ch.props,
-                  onClick: (e: React.FormEvent) => {
-                    if (ch.props.onClick)
-                      actionOnClick(e, ch.props.onClick)
-                  },
-                })}
-                {ch.props.text && (
-                  <span
-                    className={`${'right' in position ? 'right' : ''} ${
-                      alwaysShowTitle ? 'always-show' : ''
-                    }`}
-                    aria-hidden={ariaHidden}
-                  >
-                    {ch.props.text}
-                  </span>
-                )}
-              </li>
-            )
-        }
-        return null;
-    }
-    );
+      if (React.isValidElement<ABProps>(ch)) {
+        return (
+          <li className={`rtf--ab__c ${'top' in position ? 'top' : ''}`}>
+            {React.cloneElement(ch, {
+              'data-testid': `action-button-${i}`,
+              'aria-label': ch.props.text || `Menu button ${i + 1}`,
+              'aria-hidden': ariaHidden,
+              tabIndex: isOpen ? 0 : -1,
+              ...ch.props,
+              onClick: (e: React.FormEvent) => {
+                if (ch.props.onClick) actionOnClick(e, ch.props.onClick);
+              },
+            })}
+            {ch.props.text && (
+              <span
+                className={`${'right' in position ? 'right' : ''} ${
+                  alwaysShowTitle ? 'always-show' : ''
+                }`}
+                aria-hidden={ariaHidden}
+              >
+                {ch.props.text}
+              </span>
+            )}
+          </li>
+        );
+      }
+      return null;
+    });
 
   return (
     <ul

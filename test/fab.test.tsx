@@ -15,7 +15,7 @@ describe('<Fab />', () => {
       const { getByTestId } = render(
         <Fab icon={<span>+</span>}>
           <Action>+</Action>
-        </Fab>
+        </Fab>,
       );
 
       const fab = getByTestId('fab');
@@ -32,7 +32,7 @@ describe('<Fab />', () => {
       const { getByTestId } = render(
         <Fab icon={<span>+</span>} event="click">
           <Action>+</Action>
-        </Fab>
+        </Fab>,
       );
 
       const fab = getByTestId('fab');
@@ -48,7 +48,7 @@ describe('<Fab />', () => {
       const { getByTestId } = render(
         <Fab icon={<span>+</span>} event="click">
           <Action>+</Action>
-        </Fab>
+        </Fab>,
       );
 
       const fab = getByTestId('fab');
@@ -62,7 +62,7 @@ describe('<Fab />', () => {
       const { getByTestId } = render(
         <Fab icon={<span>+</span>} event="hover">
           <Action>+</Action>
-        </Fab>
+        </Fab>,
       );
 
       const fab = getByTestId('fab');
@@ -88,7 +88,7 @@ describe('<Fab />', () => {
       const { getByTestId } = render(
         <Fab icon={<span>+</span>} event="click">
           <Action onClick={spy}>+</Action>
-        </Fab>
+        </Fab>,
       );
 
       const fab = getByTestId('fab');
