@@ -3,42 +3,40 @@ name: React Tiny Fab
 route: /
 ---
 
-import { Playground } from 'docz';
 import { Fab, Action } from './index.tsx';
+import './styles.scss';
 
-![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png)
+<img src="https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/logo.png" />
 
 > A tiny (~700 byte gzip) WAI-ARIA compliant Floating Action Button for React
 
 ## Install
 ```
-   npm install react-tiny-fab
-   yarn add react-tiny-fab
+npm install react-tiny-fab
+yarn add react-tiny-fab
 ```
 
-> `react-tiny-fab` v3 now relies on React version 16.8 and up because it is implemented using [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+> `react-tiny-fab` v3 and up now relies on React version 16.8 and up because it is implemented using [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 ## Usage
 There are two components available for import - `Fab` and `Action`. You import them like this:
 ```
-   import { Fab, Action } from 'react-tiny-fab';
-   import 'react-tiny-fab/dist/styles.css';
+import { Fab, Action } from 'react-tiny-fab';
+import 'react-tiny-fab/dist/styles.css';
 ```
 
 ## Example
-Here is an example of how you would use the components:
 
-<Playground>
-  <h4>Check the bottom right of the screen</h4>
-  <Fab icon={<span>+</span>} mainButtonStyles={{backgroundColor: '#e74c3c'}}>
+> Check the bottom right of the screen
+
+<Fab icon={<span>+</span>} mainButtonStyles={{backgroundColor: '#e74c3c'}}>
     <Action text="Add Something" style={{backgroundColor: '#3498db'}} onClick={() => alert('It works!')}>
-      +
+      &plus;
     </Action>
     <Action text="Assign Something" style={{backgroundColor: '#3498db'}} onClick={() => alert('It still works!')}>
       =
     </Action>
-  </Fab>
-</Playground>
+</Fab>
 
 Here is an example of how you would use the components:
 ```js

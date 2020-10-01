@@ -5,8 +5,8 @@ module.exports = {
     config.plugins.push(
       postCss({
         extensions: ['.sass'],
-        extract: !!options.writeMeta,
-        minimize: false,
+        extract: !!options.writeMeta ? 'styles.css' : false,
+        minimize: true,
       }),
     );
     return config;
