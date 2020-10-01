@@ -1,7 +1,7 @@
 {
   "name": "react-tiny-fab",
   "description": "A tiny Floating Action Button for React.",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "license": "MIT",
   "author": "Deric Cain <deric.cain@gmail.com>",
   "repository": {
@@ -59,11 +59,11 @@
   "size-limit": [
     {
       "path": "dist/react-tiny-fab.cjs.production.min.js",
-      "limit": "1.5 KB"
+      "limit": "2 KB"
     },
     {
       "path": "dist/react-tiny-fab.esm.js",
-      "limit": "1.5 KB"
+      "limit": "2 KB"
     }
   ],
   "devDependencies": {
