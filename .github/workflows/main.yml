@@ -1,0 +1,36 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: ['12.x']
+        os: [ubuntu-latest]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install deps, build and publish
+        uses: bahmutov/npm-install@v1
+
+      - name: Test
+        run: npm run test -- --ci --coverage --maxWorkers=2
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish
+        uses: primer/publish@v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_REGISTRY_URL: registry.npmjs.org
