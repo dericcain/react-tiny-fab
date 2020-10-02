@@ -19,14 +19,18 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install deps and build (with cache)
+      - name: Install deps, build and publish
         uses: bahmutov/npm-install@v1
 
-      - name: Lint
-        run: yarn lint
-
       - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+        run: npm run test -- --ci --coverage --maxWorkers=2
 
       - name: Build
-        run: yarn build
+        run: npm run build
+
+      - name: Publish
+        uses: primer/publish@v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_REGISTRY_URL: registry.npmjs.org

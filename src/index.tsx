@@ -24,18 +24,11 @@ export const MB: React.FC<MBProps> = ({ children, ...p }) => (
   </button>
 );
 
-interface Position {
-  top?: number;
-  right?: number;
-  bottom?: number;
-  left?: number;
-}
-
-const defaultPosition: Position = { bottom: 24, right: 24 };
+const defaultStyles: React.CSSProperties = { bottom: 24, right: 24 };
 
 interface FabProps {
   event?: 'hover' | 'click';
-  position?: Position;
+  style?: React.CSSProperties;
   alwaysShowTitle?: boolean;
   icon?: React.ReactNode;
   mainButtonStyles?: React.CSSProperties;
@@ -46,13 +39,14 @@ interface FabProps {
 
 const Fab: React.FC<FabProps> = ({
   event = 'hover',
-  position = defaultPosition,
+  style = defaultStyles,
   alwaysShowTitle = false,
   children,
   icon,
   mainButtonStyles,
   onClick,
   text,
+  ...p
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ariaHidden = alwaysShowTitle || !isOpen;
@@ -80,7 +74,7 @@ const Fab: React.FC<FabProps> = ({
     React.Children.map(children, (ch, i) => {
       if (React.isValidElement<ABProps>(ch)) {
         return (
-          <li className={`rtf--ab__c ${'top' in position ? 'top' : ''}`}>
+          <li className={`rtf--ab__c ${'top' in style ? 'top' : ''}`}>
             {React.cloneElement(ch, {
               'data-testid': `action-button-${i}`,
               'aria-label': ch.props.text || `Menu button ${i + 1}`,
@@ -93,7 +87,7 @@ const Fab: React.FC<FabProps> = ({
             })}
             {ch.props.text && (
               <span
-                className={`${'right' in position ? 'right' : ''} ${
+                className={`${'right' in style ? 'right' : ''} ${
                   alwaysShowTitle ? 'always-show' : ''
                 }`}
                 aria-hidden={ariaHidden}
@@ -113,7 +107,8 @@ const Fab: React.FC<FabProps> = ({
       onMouseLeave={leave}
       className={`rtf ${isOpen ? 'open' : 'closed'}`}
       data-testid="fab"
-      style={position}
+      style={style}
+      {...p}
     >
       <li className="rtf--mb__c">
         <MB
@@ -128,9 +123,7 @@ const Fab: React.FC<FabProps> = ({
         </MB>
         {text && (
           <span
-            className={`${'right' in position ? 'right' : ''} ${
-              alwaysShowTitle ? 'always-show' : ''
-            }`}
+            className={`${'right' in style ? 'right' : ''} ${alwaysShowTitle ? 'always-show' : ''}`}
             aria-hidden={ariaHidden}
           >
             {text}

@@ -13,5 +13,6 @@ export default {
     colors: {
       primary: '#73A0D4',
     },
+    fontSizes: [10, 12, 14, 17, 20, 28, 36, 52]
   },
 };
