@@ -39,7 +39,9 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "docs": "docz dev",
-    "docs:build": "docz build"
+    "docs:build": "docz build",
+    "prestart:example": "tsdx build",
+    "start:example": "serve example"
   },
   "peerDependencies": {
     "react": ">=16.8"
@@ -83,6 +85,7 @@
     "react-dom": "16.13.1",
     "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-scss": "^2.6.1",
+    "serve": "^11.3.2",
     "size-limit": "^4.6.0",
     "tsdx": "^0.14.0",
     "tslib": "^2.0.1",
