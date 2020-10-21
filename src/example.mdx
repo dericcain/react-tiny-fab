@@ -40,7 +40,7 @@ import 'react-tiny-fab/dist/styles.css';
 
 Here is an example of how you would use the components:
 ```js
-// The Fab is the main button. Pass any component to the icon prop and choose 
+// The Fab is the main button. Pass any component to the icon prop and choose
 // either click or hover for the event (default is hover)
 <Fab
   mainButtonStyles={mainButtonStyles}
@@ -51,7 +51,7 @@ Here is an example of how you would use the components:
   alwaysShowTitle={true}
   onClick={someFunctionForTheMainButton}
 >
-  // The Action components are the "buttons" that appear when the Fab is open. You can use the out-of-the-box Action 
+  // The Action components are the "buttons" that appear when the Fab is open. You can use the out-of-the-box Action
   // component or you can use a custom component of any type and style it any way that you'd like. The "text" prop
   // is the popup label that appears when the Action component is hovered.
   <Action
@@ -90,13 +90,13 @@ This is the main component that controls the Floating Action Button.
 | `onClick`            | function                   | null                      | false    | If you only need to use the main button for something, then you can attach an `onClick` handler to the main button. The React Synthetic Event will be passed in just like a normal `onClick` |
 | `text`               | string                     | null                      | false    | If you attach an `onClick` handler to the main button, then the original `Action` components would not show. Instead you can attach `text` to display while user hover the FAB |
 | `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here. |
-> Based on the `position` prop, the FAB will figure out the direction of the `<Action />` `text` and also which way to 
+> Based on the `position` prop, the FAB will figure out the direction of the `<Action />` `text` and also which way to
 > expand when hovered/clicked (up or down).
 
 ### `<Action />`
-This component represents the smaller buttons that appear when the main button is hovered/clicked. Now, you do not have 
+This component represents the smaller buttons that appear when the main button is hovered/clicked. Now, you do not have
 to use this component. You can use your own custom component(s) and create something totally different than a Floating
-Action Button. For instance, you could create your own "Support Button" that when clicked, will display a chat box or 
+Action Button. For instance, you could create your own "Support Button" that when clicked, will display a chat box or
 some type of form that submits a contact request.
 
 #### Props
@@ -106,7 +106,7 @@ some type of form that submits a contact request.
 | `children` | React Element/Component |         | false    | This will be the icon/text for the action.                                   |
 | `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here, e.g. (`onClick`, `style`, etc.) |
 
-## Demo 
+## Demo
 Check out the `index.html` file in the `example` folder for an example of the traditional FAB and also a form pop-up that could be used to send contact information, or something else.
 
 ## Contributing
@@ -125,8 +125,8 @@ This package is only one JS file and it is tested pretty good. Make sure that no
 are made. Also, if you add new functionality and it *warrants* testing, please add tests. If you need help with this, I
 will gladly help.
 
-## Issues 
+## Issues
 If you find an issue, head over to the Issues section and let me know about it. If you want to be super cool, you can submit a PR that fixes the issue.
 
 ## License (MIT)
-[Check it out here.](./LICENSE.md)
+[Check it out here.](https://github.com/dericgw/react-tiny-fab/blob/master/LICENSE)
