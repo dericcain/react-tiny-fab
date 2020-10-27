@@ -76,7 +76,9 @@ const Fab: React.FC<FabProps> = ({
     React.Children.map(children, (ch, i) => {
       if (React.isValidElement<ABProps>(ch)) {
         return (
-          <li className={`rtf--ab__c ${'top' in style ? 'top' : ''}`}>
+          <li
+            className={`rtf--ab__c ${style['top'] !== '' || style['top'] !== 'unset' ? 'top' : ''}`}
+          >
             {React.cloneElement(ch, {
               'data-testid': `action-button-${i}`,
               'aria-label': ch.props.text || `Menu button ${i + 1}`,
