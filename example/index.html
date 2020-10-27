@@ -12,6 +12,7 @@
   <body>
     <div id="root"></div>
     <script>
+      const { Babel } = window
       Babel.registerPreset('umd-with-react-globals-preset', {
         presets: [[Babel.availablePresets['es2015']]],
         plugins: [
@@ -46,7 +47,7 @@
       src="./dist/react-tiny-fab.esm.js"
     ></script>
     <script type="text/babel" data-presets="inline-code-preset">
-      import { Fab, Action, MB } from 'react-tiny-fab';
+      import { Fab, Action } from 'react-tiny-fab';
       const components = [
         {
           position: {
@@ -158,6 +159,7 @@
         right: '100%',
         padding: '18px',
         boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+        backgroundColor: '#fff'
       };
 
       /**
@@ -177,15 +179,15 @@
         >
           <div style={abStyles}>
             <h4>Need help?</h4>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', margin: 6 }}>
               <label htmlFor="name">Name</label>
               <input type="text" id="name" />
             </div>
-            <div>
+            <div style={{ margin: 6 }}>
               <label htmlFor="name">Email</label>
               <input type="text" id="email" />
             </div>
-            <button>Submit</button>
+            <button style={{ margin: 6 }}>Submit</button>
           </div>
         </Fab>
       );
