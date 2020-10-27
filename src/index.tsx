@@ -55,12 +55,10 @@ const Fab: React.FC<FabProps> = ({
   const enter = () => event === 'hover' && open();
   const leave = () => event === 'hover' && close();
   const toggle = (e: React.FormEvent) => {
-    console.log('toggled');
-    // if (onClick) {
-    //   return onClick(e);
-    // }
+    if (onClick) {
+      onClick(e);
+    }
     e.persist();
-    // return event === 'click' ? (isOpen ? close() : open()) : null;
     return setIsOpen(!isOpen);
   };
 
