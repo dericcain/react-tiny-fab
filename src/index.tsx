@@ -61,7 +61,7 @@ const Fab: React.FC<FabProps> = ({
     // }
     e.persist();
     // return event === 'click' ? (isOpen ? close() : open()) : null;
-    return event === 'click' ? setIsOpen(!isOpen) : null;
+    return setIsOpen(!isOpen);
   };
 
   const actionOnClick = (e: React.FormEvent, userFunc: (e: React.FormEvent) => void) => {
