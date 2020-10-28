@@ -50,17 +50,17 @@ const Fab: React.FC<FabProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ariaHidden = alwaysShowTitle || !isOpen;
-  let toggled = false;
+  let isOpenAndClicked = false;
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
   const enter = () => event === 'hover' && open();
-  const leave = () => event === 'hover' && !toggled && close();
+  const leave = () => event === 'hover' && !isOpenAndClicked && close();
   const toggle = (e: React.FormEvent) => {
     if (onClick) {
       onClick(e);
     }
     e.persist();
-    toggled = !toggled;
+    isOpenAndClicked = !isOpenAndClicked;
     return setIsOpen(!isOpen);
   };
 
