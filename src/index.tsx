@@ -34,6 +34,7 @@ interface FabProps {
   mainButtonStyles?: React.CSSProperties;
   onClick?: (e: React.FormEvent) => void;
   text?: string;
+  clickToggle?: boolean;
   children?: React.ReactNode;
 }
 
@@ -46,6 +47,7 @@ const Fab: React.FC<FabProps> = ({
   mainButtonStyles,
   onClick,
   text,
+  clickToggle = true,
   ...p
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,10 +58,10 @@ const Fab: React.FC<FabProps> = ({
   const leave = () => event === 'hover' && close();
   const toggle = (e: React.FormEvent) => {
     if (onClick) {
-      return onClick(e);
+      onClick(e);
     }
     e.persist();
-    return event === 'click' ? (isOpen ? close() : open()) : null;
+    return event === 'click' && clickToggle ? (isOpen ? close() : open()) : null;
   };
 
   const actionOnClick = (e: React.FormEvent, userFunc: (e: React.FormEvent) => void) => {

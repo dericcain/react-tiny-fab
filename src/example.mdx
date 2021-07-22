@@ -89,6 +89,7 @@ This is the main component that controls the Floating Action Button.
 | `alwaysShowTitle`    | boolean                    | false                     | false    | If the title of the `Action` component should always be shown (not just on hover), set this to true and the title will always be shown |
 | `onClick`            | function                   | null                      | false    | If you only need to use the main button for something, then you can attach an `onClick` handler to the main button. The React Synthetic Event will be passed in just like a normal `onClick` |
 | `text`               | string                     | null                      | false    | If you attach an `onClick` handler to the main button, then the original `Action` components would not show. Instead you can attach `text` to display while user hover the FAB |
+| `clickToggle`        | boolean                    | false                     | false    | Whether you want to keep the default toggle behaviour after a click event |
 | `...props` | Anything                |         | false    | Anything you can add to a React component, you can add here. |
 > Based on the `position` prop, the FAB will figure out the direction of the `<Action />` `text` and also which way to
 > expand when hovered/clicked (up or down).
