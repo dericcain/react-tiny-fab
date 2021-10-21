@@ -10,7 +10,7 @@ at only around 671 bytes gzipped, React Tiny FAB is a great solution. It is a li
 ![React Tiny FAB](https://raw.githubusercontent.com/dericgw/react-tiny-fab/master/fab.gif)
 
 ## Docs
-Please visit here for docs: [https://dericgw.github.io/react-tiny-fab](https://dericgw.github.io/react-tiny-fab)
+Please visit here for docs: [https://dericcain.github.io/react-tiny-fab/](https://dericcain.github.io/react-tiny-fab/)
 
 ## Issues
 If you find an issue, head over to the [Issues](https://github.com/dericgw/react-tiny-fab/issues) section and let me
