@@ -50,16 +50,17 @@ const Fab: React.FC<FabProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ariaHidden = alwaysShowTitle || !isOpen;
+  const interpolatedEvent = 'ontouchstart' in window ? 'click' : event;
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
-  const enter = () => event === 'hover' && open();
-  const leave = () => event === 'hover' && close();
+  const enter = () => interpolatedEvent === 'hover' && open();
+  const leave = () => interpolatedEvent === 'hover' && close();
   const toggle = (e: React.FormEvent) => {
     if (onClick) {
       return onClick(e);
     }
     e.persist();
-    return event === 'click' ? (isOpen ? close() : open()) : null;
+    return interpolatedEvent === 'click' ? (isOpen ? close() : open()) : null;
   };
 
   const actionOnClick = (e: React.FormEvent, userFunc: (e: React.FormEvent) => void) => {
