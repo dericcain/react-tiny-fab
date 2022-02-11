@@ -80,7 +80,7 @@
     "gatsby-theme-docz": "^2.3.1",
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rollup-plugin-postcss": "^3.1.8",
