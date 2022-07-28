@@ -50,7 +50,7 @@ const Fab: React.FC<FabProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ariaHidden = alwaysShowTitle || !isOpen;
-  const interpolatedEvent = 'ontouchstart' in window ? 'click' : event;
+  const interpolatedEvent = typeof window !== 'undefined' ? 'ontouchstart' in window ? 'click' : event : event;
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
   const enter = () => interpolatedEvent === 'hover' && open();
