@@ -57,6 +57,7 @@ const Fab: React.FC<FabProps> = ({
   const leave = () => interpolatedEvent === 'hover' && close();
   const toggle = (e: React.FormEvent) => {
     if (onClick) {
+      isOpen ? close() : open() 
       return onClick(e);
     }
     e.persist();
